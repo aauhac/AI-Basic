@@ -1,0 +1,7 @@
+map,size,cells,avg_ms_per_frame,estimated_fps
+maze01.txt,15x12,180,1.666,600
+maze02.txt,17x13,221,1.519,658
+maze03.txt,21x17,357,1.375,727
+random_11x11,11x11,121,1.812,552
+random_21x15,21x15,315,1.782,561
+random_31x21,31x21,651,1.334,749

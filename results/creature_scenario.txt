@@ -1,0 +1,29 @@
+MAZE-13 Creature scenario log
+seed=4, map=experiments.SCENARIO_MAP
+
+##############
+#S..........K#
+#.############
+#.############
+#.############
+#.############
+#.############
+#.############
+#G..........E#
+##############
+
+step                              state    pos      face  visible  last_seen memory  caught
+--------------------------------------------------------------------------------------------
+1 start                           dormant  (8, 1)   w     True     None      0.0     False
+2 dormant holds                   dormant  (8, 1)   w     True     None      0.0     False
+3 key taken -> activated          patrol   (7, 1)   w     False    None      0.0     False
+4 patrol                          patrol   (5, 1)   w     False    None      0.0     False
+5 spotted -> chase                chase    (8, 9)   a     True     (8, 4)    5.0     False
+6 chasing                         chase    (8, 6)   a     True     (8, 4)    5.0     False
+7 corner -> lost sight -> search  search   (8, 5)   a     False    (8, 4)    4.5     False
+8 walked to last seen cell        search   (8, 1)   a     False    (8, 4)    0.5     False
+9 re-spotted -> chase             search   (8, 1)   a     True     (8, 4)    0.5     True
+10 contact                        search   (8, 1)   a     True     (8, 4)    0.5     True
+
+caught=True  over=True  player=(8, 1)  creature=(8, 1)
+reachable cells from creature spawn: 30

@@ -1,0 +1,54 @@
+MAZE-13 실험 요약
+============================================================
+
+[Pathfinding]  BFS / DFS / A*
+  map         algo     moves  visited   avg_ms
+  maze01.txt  bfs         21      110    0.271
+  maze01.txt  dfs         39       46    0.115
+  maze01.txt  astar       21       64    0.194
+  maze02.txt  bfs         72      125    0.342
+  maze02.txt  dfs         72      151    0.388
+  maze02.txt  astar       72      103    0.351
+  maze03.txt  bfs        132      251    0.901
+  maze03.txt  dfs        132      239    0.703
+  maze03.txt  astar      132      226    0.687
+  - maze01.txt: BFS 와 A* 최단 이동 동일 True (21), DFS 39, 방문 상태 BFS 110 vs A* 64
+  - maze02.txt: BFS 와 A* 최단 이동 동일 True (72), DFS 72, 방문 상태 BFS 125 vs A* 103
+  - maze03.txt: BFS 와 A* 최단 이동 동일 True (132), DFS 132, 방문 상태 BFS 251 vs A* 226
+
+[Generator]  Randomized DFS + Braiding
+  specials=True : 성공 249/270 (92.2%), 검증 통과 249, Trap-safe 249
+  specials=False: 성공 270/270 (100.0%), 검증 통과 270, Trap-safe 270
+  크기별 성공률:
+    11x11    163/180 (90.6%)  최대 평균 생성시간 10.4 ms
+    21x15    178/180 (98.9%)  최대 평균 생성시간 256.4 ms
+    31x21    178/180 (98.9%)  최대 평균 생성시간 1326.5 ms
+  Trap-safe 검증 실패 조합: 0개
+
+[Raycasting]
+  프레임 계산 시간 1.20 ~ 3.12 ms (셀 수 121 ~ 651)
+  * estimated_fps 는 off-screen 계산량 환산값이며 실제 화면 주사율이 아니다.
+
+[Creature]
+  dormant   update 평균 0.16 us (2000회)
+  patrol    update 평균 1.29 us (2000회)
+  search    update 평균 1.06 us (2000회)
+  chase     update 평균 1.13 us (2000회)
+  FSM 시나리오: caught=True  over=True  player=(8, 3)  creature=(8, 3)
+
+[Adaptive Escape Route]
+  시나리오 6개 (already_safe 1, 막힘 5)
+  already_safe 에서 연 벽: 0개
+  막힌 시나리오 복구: 5/5
+  연 벽 평균 0.83개, 최대 1개
+  Door 필수 조건 유지: True
+  already_safe  평균 0.092 ms (800회, 0.0535 ~ 0.7479)
+  wall_search   평균 0.463 ms (800회, 0.2316 ~ 3.5213)
+  opened wall consistency = PASS   (wall=(2, 2))
+  Exit+Creature 회귀: result = ENTITY CONTACT
+
+[Tests]
+  326 tests  PASS
+
+주의: 위 수치는 구성한 검증 시나리오와 측정 조건에서의 결과이며,
+      모든 미로에 대한 보장을 뜻하지 않는다.

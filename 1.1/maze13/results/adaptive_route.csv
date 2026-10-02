@@ -1,0 +1,7 @@
+scenario,goal,safe_before,status,opened_count,opened_walls,safe_after,door_required_preserved,elapsed_ms
+already_safe,EXIT,True,already_safe,0,-,True,True,0.078
+creature_block,EXIT,False,opened_wall,1,"(4, 10)",True,True,0.316
+trap_block,EXIT,False,opened_wall,1,"(4, 10)",True,True,0.363
+creature_trap,EXIT,False,opened_wall,1,"(4, 10)",True,True,0.382
+door_block,DOOR,False,opened_wall,1,"(3, 11)",True,True,0.362
+exit_block,EXIT,False,opened_wall,1,"(3, 11)",True,True,0.262

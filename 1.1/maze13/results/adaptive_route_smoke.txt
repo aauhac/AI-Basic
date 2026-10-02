@@ -1,0 +1,32 @@
+MAZE-13 Adaptive Escape Route smoke
+
+[1] 기본 맵의 대표 Creature 위치
+  map         creature  goal      before  status        opened  after
+  ----------------------------------------------------------------------
+  maze01.txt  (3, 9)    (9, 12)   True    already_safe  0       True
+  maze01.txt  (4, 5)    (9, 12)   True    already_safe  0       True
+  maze01.txt  (7, 9)    (9, 12)   True    already_safe  0       True
+  maze01.txt  (9, 13)   (9, 12)   True    already_safe  0       True
+  maze02.txt  (2, 13)   (3, 13)   False   opened_wall   1       True
+  maze02.txt  (10, 4)   (3, 13)   False   opened_wall   1       True
+  maze02.txt  (1, 13)   (3, 13)   False   opened_wall   1       True
+  maze02.txt  (2, 1)    (3, 13)   True    already_safe  0       True
+  maze03.txt  (13, 3)   (14, 3)   False   no_candidate  2       False
+  maze03.txt  (9, 9)    (14, 3)   False   opened_wall   1       True
+  maze03.txt  (13, 5)   (14, 3)   False   opened_wall   1       True
+  maze03.txt  (1, 2)    (14, 3)   True    already_safe  0       True
+
+[2] 열린 벽 일관성 (이동 / Creature 경로 / Ray / 시야)
+  PASS  원본 타일이 여전히 '#'
+  PASS  model.blocks 닫힘/열림
+  PASS  Player 통과
+  PASS  Creature 경로 사용
+  PASS  Ray 통과
+  PASS  시야 통과
+  opened wall consistency = PASS   (wall=(2, 2))
+
+[3] Exit + Creature 회귀 (조사 당시 실제로 났던 버그 상황)
+  player=(10, 13)  creature=(10, 13)  exit=(10, 13)
+  cleared=False  caught=True
+  result = ENTITY CONTACT
+  기대값 ENTITY CONTACT 와 일치: True

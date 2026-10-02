@@ -1,4 +1,5 @@
 state,avg_ms_per_update,repeats
-dormant,0.00014,2000
-patrol,0.00291,2000
-chase,0.00093,2000
+dormant,0.00016,2000
+patrol,0.00129,2000
+search,0.00106,2000
+chase,0.00113,2000

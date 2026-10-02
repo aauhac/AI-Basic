@@ -1,5 +1,5 @@
 MAZE-13 Creature scenario log
-seed=4, map=experiments.SCENARIO_MAP
+seed=4, map=experiments.SCENARIO_MAP (위치는 고정, 전이는 실제 FSM)
 
 ##############
 #S..........K#
@@ -12,18 +12,18 @@ seed=4, map=experiments.SCENARIO_MAP
 #G..........E#
 ##############
 
-step                              state    pos      face  visible  last_seen memory  caught
---------------------------------------------------------------------------------------------
-1 start                           dormant  (8, 1)   w     True     None      0.0     False
-2 dormant holds                   dormant  (8, 1)   w     True     None      0.0     False
-3 key taken -> activated          patrol   (7, 1)   w     False    None      0.0     False
-4 patrol                          patrol   (5, 1)   w     False    None      0.0     False
-5 spotted -> chase                chase    (8, 9)   a     True     (8, 4)    5.0     False
-6 chasing                         chase    (8, 6)   a     True     (8, 4)    5.0     False
-7 corner -> lost sight -> search  search   (8, 5)   a     False    (8, 4)    4.5     False
-8 walked to last seen cell        search   (8, 1)   a     False    (8, 4)    0.5     False
-9 re-spotted -> chase             search   (8, 1)   a     True     (8, 4)    0.5     True
-10 contact                        search   (8, 1)   a     True     (8, 4)    0.5     True
+step                          setup                             state    creature player   face  visible  last_seen mem   target   path  caught
+-----------------------------------------------------------------------------------------------------------------------------------------------
+1 시작                          -                                 dormant  (8, 1)   (1, 1)   w     True     None      0.0   None     0     False
+2 DORMANT 유지                  -                                 dormant  (8, 1)   (1, 1)   w     True     None      0.0   None     0     False
+3 Key 획득 -> 활성화               -                                 patrol   (7, 1)   (1, 12)  w     False    None      0.0   (1, 9)   14    False
+4 PATROL 이동                   -                                 patrol   (5, 1)   (1, 12)  w     False    None      0.0   (1, 9)   12    False
+5 발견 -> CHASE                 player=(8,4) creature=(8,9) 서향    chase    (8, 9)   (8, 4)   a     True     (8, 4)    5.0   (8, 4)   0     False
+6 CHASE 지속                    -                                 chase    (8, 7)   (8, 4)   a     True     (8, 4)    5.0   (8, 4)   3     False
+7 모퉁이 -> LOS 상실 -> SEARCH     player=(5,1)                      search   (8, 7)   (5, 1)   a     False    (8, 4)    4.5   (8, 4)   0     False
+8 마지막 관측 위치 탐색                -                                 search   (8, 3)   (5, 1)   a     False    (8, 4)    0.5   (8, 3)   0     False
+9 재발견 -> CHASE                player=(8,3) creature=(8,6) 서향    chase    (8, 5)   (8, 3)   a     True     (8, 3)    5.0   (8, 3)   2     False
+10 접촉 -> CAUGHT               -                                 chase    (8, 3)   (8, 3)   a     True     (8, 3)    5.0   (8, 3)   0     True
 
-caught=True  over=True  player=(8, 1)  creature=(8, 1)
-reachable cells from creature spawn: 30
+caught=True  over=True  player=(8, 3)  creature=(8, 3)
+creature spawn 에서 도달 가능한 칸: 30

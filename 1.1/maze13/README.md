@@ -34,6 +34,8 @@ python app.py
 python app.py --info maps/maze01.txt      검증 결과 + BFS/DFS/A* 요약
 python app.py --bench 300                 렌더링 프레임 시간 측정
 python experiments.py                     보고서용 실험 전체 (results/ 에 저장)
+python experiments.py a e                 일부만 (a 탐색 / b 생성 / c 렌더링 /
+                                                  d Creature / e 우회로)
 python -m unittest discover -s tests -v   테스트
 ```
 
@@ -199,13 +201,18 @@ maze13/
 ├─ data/                records.json (실행 시 생성)
 ├─ saves/               저장 파일 (실행 시 생성)
 └─ results/             experiments.py 출력
+   ├─ pathfinding.csv / generator.csv / rendering.csv
+   ├─ creature_update.csv / creature_scenario.txt
+   ├─ adaptive_route.csv / adaptive_route_performance.csv
+   ├─ adaptive_route_smoke.txt
+   └─ report_summary.txt    위 결과를 한 장으로 모은 요약
 ```
 
 ## 테스트
 
 ```
 python -m unittest discover -s tests -v
-Ran 319 tests — OK
+Ran 326 tests — OK
 ```
 
 pygame 창이나 Tkinter 위젯을 억지로 테스트하지 않습니다. 대신 레이 계산, 입력 변환,
@@ -216,8 +223,9 @@ pygame 창이나 Tkinter 위젯을 억지로 테스트하지 않습니다. 대�
 - Creature는 **1마리**만 지원합니다. Validator가 `G`를 0개 또는 1개로 제한합니다.
 - 3D HORROR의 Creature는 **Key를 획득해야** 활성화됩니다. 그전에는 아무 일도 일어나지 않습니다.
 - 랜덤 생성은 11×11(최소 크기)에서 Trap 우회로를 만들지 못해 거부되는 경우가 있습니다
-  (측정 약 11%). 21×15 이상에서는 거의 발생하지 않습니다. 실패하면 이유를 알려 주므로
-  seed를 바꾸거나 크기를 키우면 됩니다.
+  (seed 90개 측정 18.9%). 21×15 / 31×21 에서는 2.2% 입니다. 실패하면 이유를 알려 주므로
+  seed를 바꾸거나 크기를 키우면 됩니다. 생성에 성공한 미로는 249/249 전부 Trap-safe
+  였습니다 (모든 Trap 을 동시에 막아도 Exit 까지 도달 가능).
 - 랜덤 생성의 `loop_ratio`는 **0.0 ~ 0.10**을 권장합니다. 그보다 크면 우회로가 많아져
   통로를 실제로 막는 Door 자리를 찾지 못하고 생성이 거부될 수 있습니다
   (장식용 Door를 만들지 않기 위한 의도된 동작이며, 이유를 메시지로 알려 줍니다).

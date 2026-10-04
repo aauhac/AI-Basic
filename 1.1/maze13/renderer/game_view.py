@@ -39,6 +39,9 @@ WARN_DISTANCE = 6               # 이 칸 수 안으로 들어오면 화면 가�
 WARN_BANDS = 96
 WARN_RED = (210, 24, 20)
 MESSAGE_SECONDS = 1.6
+# 벽이 열린 사실은 Key/Door/Trap 보다 급한 정보다. 문구를 한 곳에 두고 우선순위를 지킨다.
+ROUTE_OPENED_TEXT = "비상 우회로가 개방되었습니다."
+
 
 CEILING_TOP = (26, 30, 27)
 CEILING_BOTTOM = (10, 12, 10)
@@ -283,7 +286,8 @@ class GameView:
         return (creature.position[0] + 0.5, creature.position[1] + 0.5)
 
     def _wall_opened(self, walls) -> None:
-        self.say("EMERGENCY ROUTE OPENED")
+        """Game.on_wall_opened 훅. Player 이동/Creature 이동 어느 쪽에서 열려도 여기로 온다."""
+        self.say(ROUTE_OPENED_TEXT, warn=True)
 
     # ---- 입력 -------------------------------------------------------------
 
@@ -293,8 +297,12 @@ class GameView:
         시선은 여기서 바뀌지 않는다. 회전은 snap_turn() 이 전담한다.
         """
         game = self.game
+        walls_before = len(game.opened_walls)
         moved = game.move(relative_move(self.facing, key))
-        if game.last_event:                  # 무슨 일이 있었는지는 Game 이 알려 준다
+        # move() 는 _enter() 로 last_event 를 정한 뒤 guard_route() 를 돈다. 그래서 벽이
+        # 열렸으면 _wall_opened() 가 이미 메시지를 띄워 둔 상태다. 그 위를 Key/Door/Trap
+        # 문구로 덮지 않는다.
+        if game.last_event and len(game.opened_walls) == walls_before:
             self.say(EVENT_TEXT[game.last_event],
                      warn=game.last_event in WARN_EVENTS)
         if moved:

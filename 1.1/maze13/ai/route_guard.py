@@ -13,7 +13,7 @@ Game 객체는 import 하지 않고 Maze / 좌표만 받는 순수 함수로 유
 
 from typing import NamedTuple
 
-from ai.pathfinding import bfs, distances
+from ai.pathfinding import bfs, distances, grid_distances
 from maze.model import FLOOR, KEY, WALL, Maze, blocks
 
 MAX_DYNAMIC_OPENS = 2         # 게임 한 판에서 runtime 으로 열 수 있는 벽 수
@@ -197,3 +197,27 @@ def trap_safe_walls(maze: Maze, max_opens=MAX_TRAP_REPAIR_OPENS):
         opened.add(wall)
         picked.append(wall)
     return None
+
+
+def escape_possible(maze: Maze, opened_walls=()) -> bool:
+    """Creature 가 비켜설 자리가 하나라도 있는지. Horror 진입 전 경고용.
+
+    통로 폭이 1 이고 분기가 없으면 Player 와 Creature 는 자리를 맞바꿀 수 없다.
+    그래서 Creature 가 갈 수 있는 모든 칸이 Exit 까지의 경로를 끊는다면, 그 맵은
+    Creature 가 어떻게 움직여도 잡히지 않고 출구까지 갈 수 없다.
+
+    Start 는 후보에서 뺀다. Creature 가 Start 에 서려면 이미 Player 를 통과했어야
+    하므로 "비켜설 자리" 가 될 수 없다 (bfs 는 extra_blocked 를 시작 칸에 적용하지
+    않기 때문에 빼 주지 않으면 늘 통과로 나온다).
+
+    Trap 은 실제로 밟고 지나갈 수 있으니 세지 않는다. 벽 개방도 세지 않는다.
+    즉 이 함수는 "원래 미로 모양에서 비켜설 자리가 있는가" 만 본다.
+    """
+    if not maze.creature_spawns:
+        return True
+    for cell in grid_distances(maze, maze.creature_spawns[0], (), opened_walls):
+        if cell == maze.start:
+            continue
+        if bfs(maze, opened_walls=opened_walls, extra_blocked={cell}).path is not None:
+            return True
+    return False

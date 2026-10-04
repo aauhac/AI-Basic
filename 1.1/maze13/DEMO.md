@@ -86,8 +86,10 @@ python app.py
    그런데 `LAST SEEN`은 남아 있고 Creature가 **그 위치로 찾아옵니다**.
    → 이것이 "실제 좌표를 모르고 기억으로 쫓는다"는 것을 보여 주는 핵심 장면입니다.
 8. 다시 마주치면 `chase`로 복귀합니다.
-9. Creature가 외길을 막으면 `EMERGENCY ROUTE OPENED`가 뜨고 벽 한 칸이 열립니다.
+9. Creature가 외길을 막으면 `비상 우회로가 개방되었습니다.`가 뜨고 벽 한 칸이 열립니다.
    F3의 `SAFE ROUTE` / `OPENED WALLS` / `CURRENT GOAL` 줄로 확인할 수 있습니다.
+   - 벽을 열어도 비켜 갈 수 없는 외길 맵(`maps/test.txt`)을 3D HORROR로 고르면
+     **시작 전에 "통과가 보장되지 않습니다" 경고**가 뜹니다. `아니오`로 돌아올 수 있습니다.
 10. 잡히면 **붉은** `ENTITY CONTACT / YOU WERE CAUGHT`,
     도망쳐 출구에 도달하면 **녹색** `MAZE CLEARED`. 출구 칸에 Creature가 있으면
     들어가도 탈출이 아니라 접촉입니다.

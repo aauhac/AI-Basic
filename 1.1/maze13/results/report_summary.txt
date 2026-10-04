@@ -48,7 +48,7 @@ MAZE-13 실험 요약
   Exit+Creature 회귀: result = ENTITY CONTACT
 
 [Tests]
-  326 tests  PASS
+  337 tests  PASS
 
 주의: 위 수치는 구성한 검증 시나리오와 측정 조건에서의 결과이며,
       모든 미로에 대한 보장을 뜻하지 않는다.

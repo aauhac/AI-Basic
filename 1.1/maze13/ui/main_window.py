@@ -12,6 +12,7 @@ import tkinter as tk
 from pathlib import Path
 from tkinter import messagebox
 
+from ai import route_guard
 from ai.pathfinding import ALGORITHMS, moves_for
 from game import records, save_manager
 from game.engine import CLASSIC, EVENT_TEXT, HORROR, WARN_EVENTS, Game
@@ -178,6 +179,17 @@ class MainWindow(tk.Tk):
         if errors:
             messagebox.showerror("PLAY", "검증 실패:\n" + "\n".join(errors), parent=self)
             return
+        # Validator 는 Creature 를 모른다. 외길에 Creature 가 있으면 검증은 통과해도
+        # 공포 모드에서는 끝까지 갈 수 없으므로 시작 전에 알려 준다 (플레이는 허용).
+        if not classic and not route_guard.escape_possible(maze):
+            if not messagebox.askyesno(
+                    "PLAY 3D",
+                    "이 맵은 공포 모드에서 통과가 보장되지 않습니다.\n\n"
+                    "통로가 좁아 Creature 를 비켜 갈 자리가 없고,\n"
+                    "비상 우회로로 열 수 있는 벽도 없습니다.\n"
+                    "잡히지 않고 출구까지 가는 것이 불가능할 수 있습니다.\n\n"
+                    "그래도 시작하시겠습니까?", parent=self):
+                return
 
         game = Game(maze, time_limit=time_limit, map_name=Path(map_path).name,
                     play_mode=CLASSIC if classic else HORROR)

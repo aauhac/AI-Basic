@@ -4,10 +4,19 @@
 off-screen Surface 로만 확인한다.
 """
 
+import tempfile
 import unittest
+from pathlib import Path
 
 import fixtures
-from game.engine import DIRECTIONS, Game
+from game import records
+from game.engine import (
+    DIRECTIONS,
+    EVENT_KEY,
+    EVENT_TEXT,
+    EVENT_TRAP,
+    Game,
+)
 from renderer.raycaster import (
     FACING,
     Camera,
@@ -489,6 +498,16 @@ class TestCreatureInterpolation(unittest.TestCase):
 class TestEndingIntegration(unittest.TestCase):
     """실제 GameView 순서(입력 -> 충돌 -> tick -> check_over)로 종료를 확인한다."""
 
+    def setUp(self):
+        # check_over() 는 클리어 시 records.update() 를 기본 경로로 호출한다.
+        # 테스트가 사용자의 실제 플레이 기록을 오염시키지 않게 임시 파일로 돌린다.
+        self.tmp = tempfile.TemporaryDirectory()
+        path = Path(self.tmp.name) / "records.json"
+        self.addCleanup(self.tmp.cleanup)
+        real = records.update
+        records.update = lambda *args, **kw: real(*args, path=path, **kw)
+        self.addCleanup(setattr, records, "update", real)
+
     def run_to_exit(self, creature_on_exit):
         import os
 
@@ -555,6 +574,122 @@ class TestDoorAppearance(unittest.TestCase):
     def test_plain_wall_ignores_wall_x(self):
         self.assertEqual(self.colour("#", 0.01), self.colour("#", 0.99))
 
+
+@unittest.skipUnless(HAS_PYGAME, "pygame 을 불러올 수 없는 환경")
+class TestWallOpenedMessage(unittest.TestCase):
+    """벽 개방 메시지가 Key/Door/Trap 문구에 덮이지 않는지.
+
+    move() 는 _enter() 로 last_event 를 정한 뒤 guard_route() 를 돈다. 둘이 같은
+    이동에서 겹치면 어느 쪽을 보여 줄지가 정해져 있어야 한다.
+    """
+
+    # 바깥 고리가 (4, 10) 한 칸에서 끊겨 있다. K 를 집는 순간 Creature 가 깨어나
+    # (1, 7) 로 위쪽 통로를 막으므로, 그 벽을 열지 않으면 Exit 로 갈 수 없다.
+    RING_KEY = """\
+############
+#S..K..G..E#
+#.########.#
+#.########.#
+#.##########
+#.########.#
+#.########.#
+#..........#
+############
+"""
+    # Trap 이 위쪽 통로를 막고 고리도 끊겨 있다. Creature 가 깨어나 한 칸 움직이면
+    # tick_creature() 쪽 guard_route() 가 벽을 연다 (Player 는 가만히 있는다).
+    RING_TRAP = """\
+############
+#S...T....E#
+#.########.#
+#.########.#
+#.##########
+#.########.#
+#.########.#
+#.G........#
+############
+"""
+
+    def setUp(self):
+        import os
+
+        os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
+        pygame.init()
+
+    def view_for(self, text, with_creature=True):
+        import random
+
+        from game.engine import HORROR, Game
+        from maze.loader import parse_maze
+        from renderer.game_view import GameView
+
+        game = Game(parse_maze(text), map_name="ring.txt", play_mode=HORROR)
+        if with_creature:
+            game.attach_creature(random.Random(1))
+        view = GameView(game, (320, 180), (160, 90))
+        view.facing = "d"               # 오른쪽을 보게 두면 w 가 동쪽 한 칸이다
+        return game, view
+
+    def walk_to_key(self, view):
+        for _ in range(3):
+            view.step("w")
+
+    def test_wall_message_wins_over_the_key_event(self):
+        from renderer.game_view import ROUTE_OPENED_TEXT
+
+        game, view = self.view_for(self.RING_KEY)
+        self.walk_to_key(view)
+        self.assertEqual(game.player.position, game.maze.keys[0])
+        self.assertEqual(game.last_event, EVENT_KEY)      # 열쇠도 실제로 집었고
+        self.assertTrue(game.opened_walls)                # 같은 이동에서 벽도 열렸다
+        self.assertEqual(view.message, ROUTE_OPENED_TEXT)
+        self.assertTrue(view.message_warn)
+
+    def test_key_event_still_shows_when_no_wall_opens(self):
+        game, view = self.view_for(self.RING_KEY, with_creature=False)
+        self.walk_to_key(view)
+        self.assertEqual(game.last_event, EVENT_KEY)
+        self.assertEqual(game.opened_walls, set())
+        self.assertEqual(view.message, EVENT_TEXT[EVENT_KEY])
+        self.assertFalse(view.message_warn)
+
+    def test_trap_event_still_shows_in_warning_colour(self):
+        """벽이 열리지 않는 경고 이벤트는 경고 표시로 그대로 뜬다."""
+        game, view = self.view_for(self.RING_TRAP, with_creature=False)
+        for _ in range(4):
+            view.step("w")
+        self.assertEqual(game.player.position, game.maze.traps[0])
+        self.assertEqual(game.last_event, EVENT_TRAP)
+        self.assertEqual(game.opened_walls, set())
+        self.assertEqual(view.message, EVENT_TEXT[EVENT_TRAP])
+        self.assertTrue(view.message_warn)
+
+    def test_creature_movement_also_reports_the_opened_wall(self):
+        from renderer.game_view import ROUTE_OPENED_TEXT
+
+        game, view = self.view_for(self.RING_TRAP)
+        for _ in range(10):                  # 잠들어 있는 동안은 아무 일도 없다
+            game.tick_creature(0.8)
+        self.assertEqual(game.opened_walls, set())
+        self.assertEqual(view.message, "")
+
+        game.creature.activate()
+        before = game.creature.position
+        for _ in range(20):
+            game.tick_creature(0.8)
+            if game.opened_walls:
+                break
+        self.assertNotEqual(game.creature.position, before)   # 움직여서 열린 것
+        self.assertEqual(view.message, ROUTE_OPENED_TEXT)
+        self.assertTrue(view.message_warn)
+
+    def test_opened_walls_behaviour_is_unchanged(self):
+        """메시지만 고쳤다. 어떤 벽이 열리는지와 원본 타일은 그대로여야 한다."""
+        game, view = self.view_for(self.RING_KEY)
+        self.walk_to_key(view)
+        self.assertEqual(game.opened_walls, {(4, 10)})
+        self.assertEqual(game.maze.tile((4, 10)), "#")   # 원본 Maze 는 불변
+        self.assertTrue(game.is_passable((4, 10)))
 
 if __name__ == "__main__":
     unittest.main()

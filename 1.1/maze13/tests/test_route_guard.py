@@ -295,5 +295,65 @@ class TestOpenedWallConsistency(unittest.TestCase):
                                  opened_walls={self.wall}).path)
 
 
+class TestEscapePossible(unittest.TestCase):
+    """외길에 Creature 가 있으면 Horror 에서 끝까지 갈 수 없다는 판정.
+
+    Validator 는 Creature 를 모르므로 이 판정은 그와 별개다. 통과 여부만 알려 주고
+    플레이를 막지는 않는다 (막는 것은 UI 쪽 선택).
+    """
+
+    # 분기 0 개. Creature(14) 가 Key(1) 와 Door(23) 사이에 있어 비켜설 자리가 없다.
+    CORRIDOR = """\
+###############
+#SK...........#
+#############.#
+#############G#
+#############.#
+#############.#
+#############.#
+#############.#
+#############.#
+#############.#
+#############.#
+#############.#
+#############D#
+#############E#
+###############
+"""
+
+    def test_single_corridor_with_creature_is_impossible(self):
+        maze = parse_maze(self.CORRIDOR)
+        self.assertFalse(route_guard.escape_possible(maze))
+
+    def test_same_corridor_without_creature_is_fine(self):
+        maze = parse_maze(self.CORRIDOR.replace("G", "."))
+        self.assertTrue(route_guard.escape_possible(maze))
+
+    def test_a_side_pocket_is_enough_to_pass(self):
+        """벽 한 칸을 통로로 바꿔 비켜설 주머니를 만들면 통과 가능이 된다."""
+        rows = self.CORRIDOR.splitlines()
+        rows[3] = "############G.#"      # (3, 12) 를 열어 Creature 옆에 주머니를 만든다
+        maze = parse_maze("\n".join(rows) + "\n")
+        self.assertTrue(route_guard.escape_possible(maze))
+
+    def test_builtin_maps_are_all_passable(self):
+        for name in ("maze01.txt", "maze02.txt", "maze03.txt"):
+            with self.subTest(name=name):
+                self.assertTrue(route_guard.escape_possible(load_maze(f"maps/{name}")))
+
+    def test_start_cell_does_not_count_as_a_pocket(self):
+        """Creature 가 Start 에 서려면 이미 Player 를 통과했어야 한다.
+
+        bfs 는 extra_blocked 를 시작 칸에 적용하지 않아서, Start 를 빼지 않으면
+        어떤 외길이든 통과 가능으로 잘못 나온다.
+        """
+        maze = parse_maze(self.CORRIDOR)
+        self.assertIsNotNone(bfs(maze, extra_blocked={maze.start}).path)
+        self.assertFalse(route_guard.escape_possible(maze))
+
+    def test_opened_wall_can_make_it_passable(self):
+        maze = parse_maze(self.CORRIDOR)
+        self.assertTrue(route_guard.escape_possible(maze, opened_walls={(3, 12)}))
+
 if __name__ == "__main__":
     unittest.main()

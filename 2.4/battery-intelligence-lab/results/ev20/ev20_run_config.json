@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "dedup": "모든 측정 컬럼이 같은 행만 제거",
+    "session_gap_s": 10,
+    "min_rows_capacity": 100,
+    "min_delta_soc": 30.0,
+    "capacity_range_ah": [
+      72.5,
+      159.5
+    ],
+    "min_sessions_per_month": 5,
+    "knee": "ΔBIC>=10, 기울기 2배 가속, 원자료·온도보정 모두 후보, 겨울 경계 제외"
+  },
+  "timings_s": {
+    "load_and_sessionize_s": 120.25050850003026,
+    "total_s": 126.23489449999761
+  }
+}

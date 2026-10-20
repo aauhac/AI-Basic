@@ -1,0 +1,10 @@
+         table                                  metric  rows_v1  rows_v2  rows_changed  changed_stacking_rows  changed_non_stacking_rows  max_abs_delta_non_stacking  rows_only_in_v1  rows_only_in_v2
+         exp_A                               MAE → MAE       12       12             2                      2                          0                0.000000e+00                0                0
+         exp_B                               MAE → MAE       35       35             7                      7                          0                0.000000e+00                0                0
+         exp_C                               MAE → MAE       24       24             4                      4                          0                0.000000e+00                0                0
+         exp_E                               MAE → MAE       90       90            18                     18                          0                0.000000e+00                0                0
+supp_soh_rated                               MAE → MAE       25       25             5                      5                          0                0.000000e+00                0                0
+    future_soh                               MAE → MAE       28       28             4                      4                          0                0.000000e+00                0                0
+           rul                  MAE → MAE_success_only       28       28             3                      3                          0                5.329071e-15                0                0
+          ev10                               MAE → MAE       14       14             2                      2                          0                8.326673e-17                2                2
+    ev20_trend slope_ah_per_month → slope_ah_per_month       20       20             0                      0                          0                0.000000e+00                0                0

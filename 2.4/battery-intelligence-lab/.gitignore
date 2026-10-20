@@ -1,0 +1,24 @@
+# environment
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# raw data, external repositories, large derived artifacts
+data/raw/*/*
+!data/raw/*/README.md
+!data/raw/nasa/manifest.json
+external/
+*.mat
+*.rar
+*.zip
+
+# models and experiment outputs
+results/models/
+*.pkl
+*.joblib
+*.json.model
+*.ubj
+
+# graphify
+graphify-out/

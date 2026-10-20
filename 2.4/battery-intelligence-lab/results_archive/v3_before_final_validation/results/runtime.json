@@ -1,0 +1,54 @@
+{
+  "started": "2026-10-16T11:01:10",
+  "python": "3.12.4",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 158 Stepping 10, GenuineIntel",
+  "steps": {
+    "audit_stacking_cv": {
+      "seconds": 2.9,
+      "returncode": 0,
+      "log": "results\\logs\\audit_stacking_cv.log"
+    },
+    "nasa_experiments": {
+      "seconds": 355.2,
+      "returncode": 0,
+      "log": "results\\logs\\nasa_experiments.log"
+    },
+    "ev20_analysis": {
+      "seconds": 132.0,
+      "returncode": 0,
+      "log": "results\\logs\\ev20_analysis.log"
+    },
+    "ev10_external": {
+      "seconds": 28.2,
+      "returncode": 0,
+      "log": "results\\logs\\ev10_external.log"
+    },
+    "transfer_experiments": {
+      "seconds": 171.0,
+      "returncode": 0,
+      "log": "results\\logs\\transfer_experiments.log"
+    },
+    "transfer_ev20": {
+      "seconds": 121.8,
+      "returncode": 0,
+      "log": "results\\logs\\transfer_ev20.log"
+    },
+    "compare_versions": {
+      "seconds": 0.9,
+      "returncode": 0,
+      "log": "results\\logs\\compare_versions.log"
+    },
+    "compare_vs_pre_transfer": {
+      "seconds": 0.8,
+      "returncode": 0,
+      "log": "results\\logs\\compare_vs_pre_transfer.log"
+    },
+    "pytest": {
+      "seconds": 19.7,
+      "returncode": 0,
+      "log": "results\\tests\\pytest_output.txt"
+    }
+  },
+  "total_seconds": 832.4
+}

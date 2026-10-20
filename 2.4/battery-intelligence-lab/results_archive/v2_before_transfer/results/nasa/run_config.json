@@ -1,0 +1,134 @@
+{
+  "version": "v2 (audit)",
+  "target": "soh_init",
+  "default_features": [
+    "chg_cc_time_s",
+    "chg_cv_time_s",
+    "chg_v_start",
+    "chg_t_390_410_s",
+    "chg_temp_mean",
+    "chg_temp_max",
+    "chg_temp_rise",
+    "chg_ic_peak",
+    "chg_ic_peak_v",
+    "imp_re",
+    "imp_rct",
+    "discharge_no"
+  ],
+  "all_features": [
+    "chg_cc_time_s",
+    "chg_cv_time_s",
+    "chg_v_start",
+    "chg_t_390_410_s",
+    "chg_temp_mean",
+    "chg_temp_max",
+    "chg_temp_rise",
+    "chg_ic_peak",
+    "chg_ic_peak_v",
+    "chg_cc_ah",
+    "chg_total_ah",
+    "imp_re",
+    "imp_rct",
+    "discharge_no",
+    "soh_lag1",
+    "soh_lag2",
+    "soh_roll3",
+    "soh_slope5"
+  ],
+  "feature_groups": {
+    "charge": [
+      "chg_cc_time_s",
+      "chg_cv_time_s",
+      "chg_v_start",
+      "chg_t_390_410_s",
+      "chg_temp_mean",
+      "chg_temp_max",
+      "chg_temp_rise",
+      "chg_ic_peak",
+      "chg_ic_peak_v"
+    ],
+    "charge_ah": [
+      "chg_cc_ah",
+      "chg_total_ah"
+    ],
+    "impedance": [
+      "imp_re",
+      "imp_rct"
+    ],
+    "cycle": [
+      "discharge_no"
+    ],
+    "history": [
+      "soh_lag1",
+      "soh_lag2",
+      "soh_roll3",
+      "soh_slope5"
+    ]
+  },
+  "hyperparams": {
+    "LinearRegression": {},
+    "RandomForest": {
+      "n_estimators": 300,
+      "min_samples_leaf": 2,
+      "max_features": 1.0
+    },
+    "SVR_RBF": {
+      "C": 10.0,
+      "epsilon": 0.05,
+      "gamma": "scale"
+    },
+    "XGBoost": {
+      "n_estimators": 400,
+      "max_depth": 3,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "tree_method": "hist"
+    },
+    "Stacking": {
+      "base": [
+        "LinearRegression",
+        "RandomForest",
+        "SVR_RBF",
+        "XGBoost"
+      ],
+      "meta": "RidgeCV(alphas=logspace(-3,3,13)) on standardised OOF predictions",
+      "oof_plan": "forward(5 time blocks per battery) | group(leave-one-battery-out) | random(KFold 5, shuffled)"
+    }
+  },
+  "random_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "temporal_train_frac": 0.7,
+  "small_n": [
+    10,
+    20,
+    30,
+    50,
+    70,
+    90
+  ],
+  "horizons": [
+    10,
+    20
+  ],
+  "eol_ah": 1.4,
+  "tuning": "없음 (사전 고정 하이퍼파라미터)",
+  "model_selection": "학습 데이터 내부 검증만 사용 (final_claims.csv). 모든 후보 표는 기술 통계",
+  "timings_s": {
+    "features": 0.7303716000169516,
+    "exp_A": 25.17519350000657,
+    "exp_B": 37.440171000082046,
+    "exp_C": 33.57919170008972,
+    "exp_D": 0.022495399927720428,
+    "supp_soh_rated": 13.109801399987191,
+    "exp_E": 113.03426310000941,
+    "exp_future": 84.39488769997843,
+    "exp_rul": 26.321282599819824,
+    "total": 334.2548718000762
+  }
+}

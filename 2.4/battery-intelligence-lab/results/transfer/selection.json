@@ -1,0 +1,120 @@
+{
+  "target": "soh_rated",
+  "selection_rule": "NASA 4셀 leave-one-battery-out 평균 MAE 최소 (method × model)",
+  "selection": {
+    "method": "B3",
+    "model": "Stacking",
+    "nasa_lobo_MAE": 0.021516897600828488,
+    "per_method_representative": {
+      "A0": "XGBoost",
+      "B1": "XGBoost",
+      "B2": "SVR_RBF",
+      "B3": "Stacking",
+      "C1": "RandomForest",
+      "C2": "RandomForest"
+    }
+  },
+  "methods": {
+    "A0": {
+      "ir": false,
+      "features": [
+        "q390_400"
+      ],
+      "desc": "원 전압, 3.90–4.00 V 창 충전량/정격 (기존)"
+    },
+    "B1": {
+      "ir": false,
+      "features": [
+        "b390_395",
+        "b395_400",
+        "b400_405"
+      ],
+      "desc": "원 전압, 50 mV 구간 3개 충전량/정격 (증분용량)"
+    },
+    "B2": {
+      "ir": false,
+      "features": [
+        "r395_400",
+        "r400_405"
+      ],
+      "desc": "원 전압, 구간 충전량 비율 (정격용량 무관)"
+    },
+    "B3": {
+      "ir": false,
+      "features": [
+        "b390_395",
+        "b395_400",
+        "b400_405",
+        "r395_400",
+        "r400_405"
+      ],
+      "desc": "원 전압, B1+B2"
+    },
+    "C1": {
+      "ir": true,
+      "features": [
+        "b390_395",
+        "b395_400",
+        "b400_405"
+      ],
+      "desc": "IR 보정 전압(V−|I|R), 구간 충전량/정격"
+    },
+    "C2": {
+      "ir": true,
+      "features": [
+        "b390_395",
+        "b395_400",
+        "b400_405",
+        "r395_400",
+        "r400_405"
+      ],
+      "desc": "IR 보정 전압, B1+B2"
+    }
+  },
+  "models": [
+    "LinearRegression",
+    "RandomForest",
+    "SVR_RBF",
+    "XGBoost",
+    "Stacking"
+  ],
+  "hyperparams": {
+    "LinearRegression": {},
+    "RandomForest": {
+      "n_estimators": 300,
+      "min_samples_leaf": 2,
+      "max_features": 1.0
+    },
+    "SVR_RBF": {
+      "C": 10.0,
+      "epsilon": 0.05,
+      "gamma": "scale"
+    },
+    "XGBoost": {
+      "n_estimators": 400,
+      "max_depth": 3,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "tree_method": "hist"
+    },
+    "Stacking": {
+      "base": [
+        "LinearRegression",
+        "RandomForest",
+        "SVR_RBF",
+        "XGBoost"
+      ],
+      "meta": "RidgeCV(alphas=logspace(-3,3,13)) on standardised OOF predictions",
+      "oof_plan": "forward(5 time blocks per battery) | group(leave-one-battery-out) | random(KFold 5, shuffled)"
+    }
+  },
+  "stacking_oof": "group (배터리 단위 leave-one-out, 감사 v2 방식 재사용)",
+  "missing_features": "해당 방법의 특징이 하나라도 없는 NASA 행은 학습·검증에서 제외 (기존 EV10 Baseline과 같은 규칙, 대치 없음). 개발 실행(결측 유지)의 결과는 results_archive/transfer_dev_keepNaN",
+  "ev10_role": "최종 외부 평가 전용. 라벨은 학습·선택·전압창·보정 상수에 사용하지 않음",
+  "ev10_excluded": {
+    "5": "README·파일 라벨 불일치 (Cn 174 vs 147 Ah)"
+  },
+  "nasa_rows": 636,
+  "nasa_selection_seconds": 69.02580180001678
+}

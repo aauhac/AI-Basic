@@ -1,0 +1,30 @@
+exp A done in 25.5s
+exp B done in 39.8s
+exp C done in 35.4s
+exp E done in 121.9s
+C:\Users\kmh26\OneDrive\바탕 화면\lab\bat\battery-intelligence-lab\.venv\Lib\site-packages\sklearn\impute\_base.py:647: UserWarning: Skipping features without any observed values: ['imp_re' 'imp_rct' 'soh_slope5']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\kmh26\OneDrive\바탕 화면\lab\bat\battery-intelligence-lab\.venv\Lib\site-packages\sklearn\impute\_base.py:647: UserWarning: Skipping features without any observed values: ['imp_re' 'imp_rct' 'soh_slope5']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\kmh26\OneDrive\바탕 화면\lab\bat\battery-intelligence-lab\.venv\Lib\site-packages\sklearn\impute\_base.py:647: UserWarning: Skipping features without any observed values: ['imp_re' 'imp_rct' 'soh_slope5']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\kmh26\OneDrive\바탕 화면\lab\bat\battery-intelligence-lab\.venv\Lib\site-packages\sklearn\impute\_base.py:647: UserWarning: Skipping features without any observed values: ['imp_re' 'imp_rct' 'soh_slope5']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\kmh26\OneDrive\바탕 화면\lab\bat\battery-intelligence-lab\.venv\Lib\site-packages\sklearn\impute\_base.py:647: UserWarning: Skipping features without any observed values: ['imp_re' 'imp_rct' 'soh_slope5']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\kmh26\OneDrive\바탕 화면\lab\bat\battery-intelligence-lab\.venv\Lib\site-packages\sklearn\impute\_base.py:647: UserWarning: Skipping features without any observed values: ['imp_re' 'imp_rct' 'soh_slope5']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+exp future done in 88.0s
+exp rul done in 26.8s
+{
+ "features": 0.7657173000043258,
+ "exp_A": 25.541421600006288,
+ "exp_B": 39.79388479999034,
+ "exp_C": 35.41009760000452,
+ "exp_D": 0.023214100001496263,
+ "supp_soh_rated": 14.038445700003649,
+ "exp_E": 121.87989700000617,
+ "exp_future": 87.96176629999536,
+ "exp_rul": 26.767550899996422,
+ "total": 352.6422373999958
+}

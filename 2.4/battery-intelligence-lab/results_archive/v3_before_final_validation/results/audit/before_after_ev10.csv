@@ -1,0 +1,17 @@
+window,case,model,v1,v2,delta,changed,status
+390_400,default (veh5 제외),Baseline: NASA 평균 SOH,0.1404811306208128,0.1404811306208128,0.0,False,both
+390_400,default (veh5 제외),EV10 내부 LOO 선형회귀 (참고 · 라벨 종속),,0.0594679062032451,,True,v2 only (new)
+390_400,default (veh5 제외),EV10 내부 LOO 선형회귀 (참고),0.0594679062032451,,,True,v1 only (removed)
+390_400,default (veh5 제외),LinearRegression,0.2082924727419088,0.2082924727419088,0.0,False,both
+390_400,default (veh5 제외),RandomForest,0.2159095627321898,0.2159095627321898,0.0,False,both
+390_400,default (veh5 제외),SVR_RBF,0.229189894783126,0.229189894783126,0.0,False,both
+390_400,default (veh5 제외),Stacking,0.2206939576934305,0.2150842452051517,-0.005609712488278795,True,both
+390_400,default (veh5 제외),XGBoost,0.2187109863699442,0.2187109863699442,0.0,False,both
+395_405,default (veh5 제외),Baseline: NASA 평균 SOH,0.1404811306208128,0.1404811306208128,0.0,False,both
+395_405,default (veh5 제외),EV10 내부 LOO 선형회귀 (참고 · 라벨 종속),,0.0532906970543456,,True,v2 only (new)
+395_405,default (veh5 제외),EV10 내부 LOO 선형회귀 (참고),0.0532906970543456,,,True,v1 only (removed)
+395_405,default (veh5 제외),LinearRegression,0.2751563443944945,0.2751563443944945,0.0,False,both
+395_405,default (veh5 제외),RandomForest,0.2270832768040894,0.2270832768040895,8.326672684688674e-17,False,both
+395_405,default (veh5 제외),SVR_RBF,0.2387369300720395,0.2387369300720395,0.0,False,both
+395_405,default (veh5 제외),Stacking,0.2614766006579938,0.2440287058751262,-0.017447894782867568,True,both
+395_405,default (veh5 제외),XGBoost,0.2291516737084553,0.2291516737084553,0.0,False,both

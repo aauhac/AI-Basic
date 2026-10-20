@@ -1,0 +1,29 @@
+{
+  "started": "2026-10-14T20:46:56",
+  "python": "3.12.4",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 158 Stepping 10, GenuineIntel",
+  "steps": {
+    "nasa_experiments": {
+      "seconds": 291.9,
+      "returncode": 0,
+      "log": "results\\logs\\nasa_experiments.log"
+    },
+    "ev20_analysis": {
+      "seconds": 126.4,
+      "returncode": 0,
+      "log": "results\\logs\\ev20_analysis.log"
+    },
+    "ev10_external": {
+      "seconds": 10.2,
+      "returncode": 0,
+      "log": "results\\logs\\ev10_external.log"
+    },
+    "pytest": {
+      "seconds": 12.7,
+      "returncode": 0,
+      "log": "results\\tests\\pytest_output.txt"
+    }
+  },
+  "total_seconds": 441.2
+}

@@ -1,0 +1,17 @@
+{
+  "pipelines": {
+    "final": [
+      "B3",
+      "Stacking"
+    ],
+    "A0": [
+      "A0",
+      "XGBoost"
+    ]
+  },
+  "voltage": "pack_voltage/90",
+  "c_rated_ah": 145.0,
+  "session_filter": "간격 10 s 분할, 100행 이상, SOC 점프·하락 없음, 양(+) 전류 없음",
+  "label_note": "EV20에는 독립 측정 SOH가 없음: 비교 대상은 SOC 기반 추정 용량 비율",
+  "runtime_s": 114.85234949999722
+}

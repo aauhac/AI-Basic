@@ -1,0 +1,18 @@
+exp A done in 21.2s
+exp B done in 22.9s
+exp C done in 14.5s
+exp E done in 152.7s
+exp future done in 38.4s
+exp rul done in 14.6s
+{
+ "features": 0.7408390000928193,
+ "exp_A": 21.231568099930882,
+ "exp_B": 22.93532230006531,
+ "exp_C": 14.451547400094569,
+ "exp_D": 6.732558500021696,
+ "supp_soh_rated": 17.412967700045556,
+ "exp_E": 152.73155159992166,
+ "exp_future": 38.354196900036186,
+ "exp_rul": 14.622331999940798,
+ "total": 289.61379109998234
+}

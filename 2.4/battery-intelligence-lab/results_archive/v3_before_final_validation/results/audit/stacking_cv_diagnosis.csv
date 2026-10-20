@@ -1,0 +1,11 @@
+setting,splitter,train_rows,oof_rows,meta_rows_share,oof_rows_with_future_same_battery_in_base_training,share_future_violation,oof_rows_with_same_battery_in_base_training,share_same_battery_seen
+시간순 학습(447행),"기존 KFold(5, shuffle=False)",447,447,1.0,189,0.4228187919463087,447,1.0
+시간순 학습(447행),"수정 forward(배터리별 시간 블록, 확장 창)",447,356,0.796420581655481,0,0.0,356,1.0
+LOBO 학습(B0005 제외),"기존 KFold(5, shuffle=False)",468,468,1.0,247,0.5277777777777778,468,1.0
+LOBO 학습(B0005 제외),수정 group(배터리 단위 leave-one-out),468,468,1.0,0,0.0,0,0.0
+LOBO 학습(B0006 제외),"기존 KFold(5, shuffle=False)",468,468,1.0,247,0.5277777777777778,468,1.0
+LOBO 학습(B0006 제외),수정 group(배터리 단위 leave-one-out),468,468,1.0,0,0.0,0,0.0
+LOBO 학습(B0007 제외),"기존 KFold(5, shuffle=False)",468,468,1.0,247,0.5277777777777778,468,1.0
+LOBO 학습(B0007 제외),수정 group(배터리 단위 leave-one-out),468,468,1.0,0,0.0,0,0.0
+LOBO 학습(B0018 제외),"기존 KFold(5, shuffle=False)",504,504,1.0,304,0.6031746031746031,504,1.0
+LOBO 학습(B0018 제외),수정 group(배터리 단위 leave-one-out),504,504,1.0,0,0.0,0,0.0

@@ -1,0 +1,15 @@
+scenario,validation,test_MAE_mean,folds,selected
+현재 SOH (신호 특징),temporal,0.023941841851216974,1,LinearRegression
+Small Data n=10,temporal,0.17634069272415576,1,LinearRegression
+Small Data n=20,temporal,0.2585253424333466,1,SVR_RBF
+Small Data n=30,temporal,0.14905533749762603,1,LinearRegression
+Small Data n=50,temporal,0.0866092537451527,1,Stacking
+Small Data n=70,temporal,0.04217180976925142,1,LinearRegression
+Small Data n=90,temporal,0.03654073885233001,1,LinearRegression
+Small Data n=all_pre_test,temporal,0.023941841851216974,1,LinearRegression
+현재 SOH (신호 특징),LOBO,0.03744207553895176,4,"RandomForest, XGBoost, LinearRegression, XGBoost"
+미래 SOH +10,temporal,0.03140115350480795,1,XGBoost
+미래 SOH +10,LOBO,0.024129908254107775,4,"XGBoost, XGBoost, XGBoost, XGBoost"
+미래 SOH +20,temporal,0.03965074326034644,1,LinearRegression
+미래 SOH +20,LOBO,0.029128539635980395,4,"XGBoost, XGBoost, XGBoost, XGBoost"
+RUL (1.4 Ah),labeled-LOBO,49.50108942736133,3,"LinearExtrap(all), ML-XGBoost, ML-XGBoost"

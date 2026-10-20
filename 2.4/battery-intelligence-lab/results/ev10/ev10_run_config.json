@@ -1,0 +1,55 @@
+{
+  "label_dependency": {
+    "n_vehicles_default": 9,
+    "label_equals_sumQ_over_Cn": "9/10 (|차이|<0.001), 최대 차이 0.0013 (차량 8)",
+    "feature_share_of_label_range": [
+      0.08272462625028937,
+      0.13857568828834843
+    ],
+    "feature_is_partial_sum_of_label": true,
+    "spearman_feature_vs_label": -0.11666666666666665,
+    "spearman_feature_vs_rest(label-feature)": -0.3,
+    "spearman_Ah_window_vs_Ah_total (분모 Cn 제거)": 0.9166666666666666,
+    "spearman_inverse_Cn_vs_feature (공통 분모 효과)": -0.4407412773535268,
+    "spearman_inverse_Cn_vs_label": -0.13561270072416207,
+    "label_soc_range_not_0_100": [
+      2,
+      3,
+      5,
+      6,
+      8
+    ],
+    "guard_max_label_fraction": 0.5
+  },
+  "leakage_statement": {
+    "train_test_leakage": "없음: NASA 모델의 학습·모델 선택에 EV10 데이터와 라벨을 쓰지 않음",
+    "label_dependency": "있음: EV10 SOH = 전체 충전 Ah / Cn 이고 특징 = 전압창 충전 Ah / Cn → 특징은 라벨 분자의 부분합(같은 기록, 같은 분모)",
+    "consequence": "외부 평가는 독립적 용량 측정에 대한 검증이 아님. EV10 내부 적합은 구조적 상관을 포함하므로 성능 근거로 사용 불가"
+  },
+  "windows": [
+    [
+      3.9,
+      4.0
+    ],
+    [
+      3.95,
+      4.05
+    ]
+  ],
+  "nasa_feature_range": {
+    "390_400": [
+      0.0188810728925526,
+      0.2405967480342035
+    ],
+    "395_405": [
+      0.04536646894312735,
+      0.27355692561374684
+    ]
+  },
+  "excluded_default": {
+    "5": "README(Cn 174 Ah, SOH 82.21 %)와 파일(Cn 147 Ah, SOH 97.31 %) 라벨 불일치"
+  },
+  "veh5_window_coverage": "Vmean 최대 3.993 V < 창 상한 → 두 전압창 모두 특징 없음, 포함 시나리오 평가 불가",
+  "target_nasa": "soh_rated",
+  "runtime_s": 24.255831599992234
+}

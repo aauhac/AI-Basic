@@ -1,0 +1,48 @@
+ veh  Cn_file  q_total_ah  soh_file  label_recomputed  label_minus_recomputed  label_is_sumQ_over_Cn soc_range_covered  q_win_ah_390_400  q_win_norm_390_400  feature_share_of_label_390_400  feature_le_label_390_400
+   1    234.0  220.671500  0.943041          0.943041           -1.632028e-14                   True             0–100         29.316139            0.125283                        0.132850                      True
+   2    174.0  163.296389  0.938485          0.938485            1.506573e-13                   True             4–100         18.223833            0.104735                        0.111600                      True
+   3    100.0   78.913861  0.789139          0.789139            3.121947e-13                   True              3–99          8.599944            0.085999                        0.108979                      True
+   4    115.0  100.940889  0.877747          0.877747            4.830916e-07                   True             0–100          9.733833            0.084642                        0.096431                      True
+   5    147.0  143.042250  0.973077          0.973077            1.758593e-13                   True              0–99               NaN                 NaN                             NaN                     False
+   6    100.0   92.874583  0.928746          0.928746            9.103829e-15                   True              1–99          9.417056            0.094171                        0.101395                      True
+   7    110.0  106.681833  0.969835          0.969835           -3.472778e-13                   True             0–100          9.461528            0.086014                        0.088689                      True
+   8    152.0  137.826806  0.908075          0.906755            1.319810e-03                  False              0–99         19.099444            0.125654                        0.138576                      True
+   9    150.0  152.566083  1.017107          1.017107            2.975398e-14                   True             0–100         12.620972            0.084140                        0.082725                      True
+  10    100.0   99.079056  0.990791          0.990791           -4.904965e-13                   True             0–100          8.659139            0.086591                        0.087396                      True
+{
+ "n_vehicles_default": 9,
+ "label_equals_sumQ_over_Cn": "9/10 (|차이|<0.001), 최대 차이 0.0013 (차량 8)",
+ "feature_share_of_label_range": [
+  0.08272462625028937,
+  0.13857568828834843
+ ],
+ "feature_is_partial_sum_of_label": true,
+ "spearman_feature_vs_label": -0.11666666666666665,
+ "spearman_feature_vs_rest(label-feature)": -0.3,
+ "spearman_Ah_window_vs_Ah_total (분모 Cn 제거)": 0.9166666666666666,
+ "spearman_inverse_Cn_vs_feature (공통 분모 효과)": -0.4407412773535268,
+ "spearman_inverse_Cn_vs_label": -0.13561270072416207,
+ "label_soc_range_not_0_100": [
+  2,
+  3,
+  5,
+  6,
+  8
+ ],
+ "guard_max_label_fraction": 0.5
+}
+ window              case                         model  n_test      MAE     RMSE         R2  spearman  n_vehicles  n_outside_nasa_range  fit_time_s selected_on_nasa_lobo  nasa_lobo_val_MAE
+390_400 default (veh5 제외)              LinearRegression       9 0.208292 0.219262 -10.965427 -0.116667           9                   0.0    0.005230                 False           0.035287
+390_400 default (veh5 제외)                  RandomForest       9 0.215910 0.224477 -11.541411  0.267785           9                   0.0    0.274872                 False           0.030876
+390_400 default (veh5 제외)                       SVR_RBF       9 0.229190 0.238876 -13.201883 -0.216667           9                   0.0    0.019873                 False           0.030643
+390_400 default (veh5 제외)                       XGBoost       9 0.218711 0.228559 -12.001593 -0.017100           9                   0.0    0.117944                  True           0.030169
+390_400 default (veh5 제외)                      Stacking       9 0.215084 0.226063 -11.719209 -0.250000           9                   0.0    2.220143                 False           0.030724
+390_400 default (veh5 제외)         Baseline: NASA 평균 SOH       9 0.140481 0.154120  -4.911761       NaN           9                   NaN         NaN                   NaN                NaN
+390_400 default (veh5 제외) EV10 내부 LOO 선형회귀 (참고 · 라벨 종속)       9 0.059468 0.077304  -0.487334 -0.116667           9                   NaN         NaN                   NaN                NaN
+395_405 default (veh5 제외)              LinearRegression       9 0.275156 0.281507 -18.723319  0.483333           9                   0.0    0.004242                 False           0.038304
+395_405 default (veh5 제외)                  RandomForest       9 0.227083 0.235036 -12.748920  0.411779           9                   0.0    0.272915                 False           0.030391
+395_405 default (veh5 제외)                       SVR_RBF       9 0.238737 0.246773 -14.156414  0.250000           9                   0.0    0.022505                 False           0.036025
+395_405 default (veh5 제외)                       XGBoost       9 0.229152 0.236836 -12.960315  0.347508           9                   0.0    0.104232                  True           0.029818
+395_405 default (veh5 제외)                      Stacking       9 0.244029 0.251297 -14.717256  0.366667           9                   0.0    2.266276                 False           0.034098
+395_405 default (veh5 제외)         Baseline: NASA 평균 SOH       9 0.140481 0.154120  -4.911761       NaN           9                   NaN         NaN                   NaN                NaN
+395_405 default (veh5 제외) EV10 내부 LOO 선형회귀 (참고 · 라벨 종속)       9 0.053291 0.068826  -0.178993  0.483333           9                   NaN         NaN                   NaN                NaN

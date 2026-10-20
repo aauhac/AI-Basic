@@ -1,0 +1,63 @@
+{
+  "selection": {
+    "method": "B3",
+    "model": "Stacking",
+    "nasa_lobo_MAE": 0.02151689760082883,
+    "per_method_representative": {
+      "A0": "XGBoost",
+      "B1": "XGBoost",
+      "B2": "SVR_RBF",
+      "B3": "Stacking",
+      "C1": "RandomForest",
+      "C2": "RandomForest"
+    }
+  },
+  "selection_charge_label": {
+    "method": "B3",
+    "model": "Stacking",
+    "nasa_lobo_MAE": 0.021714374442816285,
+    "per_method_representative": {
+      "A0": "XGBoost",
+      "B1": "LinearRegression",
+      "B2": "SVR_RBF",
+      "B3": "Stacking",
+      "C1": "RandomForest",
+      "C2": "RandomForest"
+    }
+  },
+  "label_stats": {
+    "n": 624,
+    "mean_soh_charge_minus_soh_rated": 0.010726001298207891,
+    "mae_soh_charge_vs_soh_rated": 0.012822415536675104,
+    "median_charge_over_prev_discharge": 1.0112743181332133,
+    "spearman_soh_charge_vs_soh_rated": 0.9943922953451043
+  },
+  "bootstrap": [
+    {
+      "mae_a": 0.21871098636994424,
+      "mae_b": 0.24505301235132076,
+      "diff": 0.026342025981376527,
+      "ci95_low": -0.015752321484028754,
+      "ci95_high": 0.06508956340029973,
+      "improvement_pct": -12.044217082364412,
+      "share_boot_b_better": 0.1044,
+      "a": "A0/XGBoost",
+      "b": "B3/Stacking",
+      "n_vehicles": 9
+    },
+    {
+      "mae_a": 0.13876739445072697,
+      "mae_b": 0.24505301235132076,
+      "diff": 0.10628561790059379,
+      "ci95_low": 0.06821744155231875,
+      "ci95_high": 0.1434556035831539,
+      "improvement_pct": -76.59264506716188,
+      "share_boot_b_better": 0.0,
+      "a": "NASA 평균 상수",
+      "b": "B3/Stacking",
+      "n_vehicles": 9
+    }
+  ],
+  "nasa_const_soh_rated": 0.7908259061394344,
+  "runtime_s": 168.3162968000106
+}

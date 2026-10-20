@@ -1,0 +1,55 @@
+{
+  "rules": {
+    "charge_samples": "비유한(NaN/inf) 샘플은 해당 충전 특징 계산에서만 제외 (원본 불변)",
+    "charge_validity": "CC 시작(I>1.0A), 4.195V 도달, 총 충전량>=1.0Ah 중 하나라도 실패하면 해당 충전 특징 전체 NaN",
+    "impedance_validity": "Re, Rct가 유한하고 (0,1) Ohm 범위일 때만 사용, 아니면 건너뛰고 직전 유효값 유지",
+    "missing_features": "모델 내부 SimpleImputer(median)가 학습 데이터에서만 적합 (XGBoost는 NaN 직접 처리)",
+    "capacity": "Capacity<=0 또는 NaN 방전 행 제거 (우선 셀에서는 0건)"
+  },
+  "counts_by_battery": {
+    "B0005": {
+      "charge_samples_total": 539314,
+      "charge_samples_nonfinite_dropped": 0,
+      "charge_invalid_low_ah": 2,
+      "discharge_without_prior_impedance": 19,
+      "charge_valid": 165,
+      "discharge_without_preceding_charge": 1,
+      "discharge_rows_total": 168,
+      "discharge_rows_dropped_capacity_le0_or_nan": 0
+    },
+    "B0006": {
+      "charge_samples_total": 539314,
+      "charge_samples_nonfinite_dropped": 0,
+      "charge_invalid_low_ah": 2,
+      "discharge_without_prior_impedance": 19,
+      "charge_valid": 165,
+      "discharge_without_preceding_charge": 1,
+      "discharge_rows_total": 168,
+      "discharge_rows_dropped_capacity_le0_or_nan": 0
+    },
+    "B0007": {
+      "charge_samples_total": 539314,
+      "charge_samples_nonfinite_dropped": 0,
+      "charge_invalid_low_ah": 2,
+      "discharge_without_prior_impedance": 19,
+      "charge_valid": 165,
+      "discharge_without_preceding_charge": 1,
+      "discharge_rows_total": 168,
+      "discharge_rows_dropped_capacity_le0_or_nan": 0
+    },
+    "B0018": {
+      "charge_samples_total": 276638,
+      "charge_samples_nonfinite_dropped": 0,
+      "charge_invalid_low_ah": 3,
+      "charge_valid": 129,
+      "discharge_rows_total": 132,
+      "discharge_rows_dropped_capacity_le0_or_nan": 0
+    }
+  },
+  "rows_after": {
+    "B0005": 168,
+    "B0006": 168,
+    "B0007": 168,
+    "B0018": 132
+  }
+}

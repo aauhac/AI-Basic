@@ -1,0 +1,97 @@
+{"method": "B3", "model": "Stacking", "nasa_lobo_MAE": 0.021516897600828488, "per_method_representative": {"A0": "XGBoost", "B1": "XGBoost", "B2": "SVR_RBF", "B3": "Stacking", "C1": "RandomForest", "C2": "RandomForest"}}
+method        model           role  n_vehicles  ev_MAE  ev_RMSE    ev_R2  ev_spearman  lobo_MAE  temporal_MAE
+    A0      XGBoost 기존 Baseline 재현           9  0.2187   0.2286 -12.0016      -0.0171    0.0302        0.0460
+    B1      XGBoost    탐색 (사후 비교용)           9  0.2311   0.2393 -13.2528      -0.1667    0.0253        0.0410
+    B2      SVR_RBF    탐색 (사후 비교용)           9  0.1091   0.1226  -2.7387       0.0500    0.0415        0.0370
+    B3     Stacking  최종 선정 (NASA만)           9  0.2451   0.2570 -15.4380       0.0000    0.0215        0.0137
+    C1 RandomForest    탐색 (사후 비교용)           9  0.3175   0.3292 -25.9740      -0.4564    0.0362        0.0309
+    C2 RandomForest    탐색 (사후 비교용)           9  0.3136   0.3251 -25.3006      -0.5188    0.0371        0.0309
+                            reference  n_test    MAE   RMSE      R2  spearman
+           NASA 평균 SOH 상수 (EV 라벨 미사용)       9 0.1388 0.1522 -4.7668       NaN
+EV10 다른 차량 라벨 평균 (LOO, EV 라벨 사용 · 참고)       9 0.0533 0.0713 -0.2656      -1.0
+ mae_a  mae_b   diff  ci95_low  ci95_high  improvement_pct  share_boot_b_better          a           b  n_vehicles
+0.2187 0.2451 0.0263   -0.0158     0.0651         -12.0442               0.1044 A0/XGBoost B3/Stacking           9
+0.1388 0.2451 0.1063    0.0682     0.1435         -76.5926               0.0000 NASA 평균 상수 B3/Stacking           9
+                                            analysis   selection  n_test    MAE   RMSE       R2  spearman
+                          주 분석: NASA 방전 기반 soh_rated B3/Stacking       9 0.2451 0.2570 -15.4380    0.0000
+ 라벨 정의 일치: NASA 충전 기반 soh_charge_rated (NASA만으로 재선정) B3/Stacking       9 0.2355 0.2483 -14.3421    0.0667
+민감도: EV10 라벨을 기록 SOC 범위로 나눠 0–100 % 환산 (주 분석 예측 그대로) B3/Stacking       9 0.2562 0.2679 -21.1085   -0.0167 {"n": 624, "mean_soh_charge_minus_soh_rated": 0.010726001298207891, "mae_soh_charge_vs_soh_rated": 0.012822415536675104, "median_charge_over_prev_discharge": 1.0112743181332133, "spearman_soh_charge_vs_soh_rated": 0.9943922953451043}
+domain  unit  R_ohm  current_a  c_rate  ir_drop_v  R_times_Crated_ohm_ah                                 R_source
+  NASA B0005 0.0853     1.5000  0.7500     0.1279                 0.1706 충전 시작 전압 점프 (같은 충전 Cycle, 표본 간격 약 2.5 s)
+  NASA B0006 0.0983     1.5000  0.7500     0.1475                 0.1966 충전 시작 전압 점프 (같은 충전 Cycle, 표본 간격 약 2.5 s)
+  NASA B0007 0.0865     1.5000  0.7500     0.1297                 0.1729 충전 시작 전압 점프 (같은 충전 Cycle, 표본 간격 약 2.5 s)
+  NASA B0018 0.0764     1.5000  0.7500     0.1146                 0.1528 충전 시작 전압 점프 (같은 충전 Cycle, 표본 간격 약 2.5 s)
+  EV10  veh1 0.0004    71.6567  0.3062     0.0267                 0.0871      전류 계단 112개 중앙값 (팩 전류 기준, 표본 간격 1 s)
+  EV10  veh2 0.0005    50.1957  0.2885     0.0252                 0.0875       전류 계단 97개 중앙값 (팩 전류 기준, 표본 간격 1 s)
+  EV10  veh3 0.0004    28.0230  0.2802     0.0115                 0.0412      전류 계단 631개 중앙값 (팩 전류 기준, 표본 간격 1 s)
+  EV10  veh4 0.0003    37.6971  0.3278     0.0110                 0.0335      전류 계단 127개 중앙값 (팩 전류 기준, 표본 간격 1 s)
+  EV10  veh5 0.0006    52.0485  0.3541     0.0329                 0.0929       전류 계단 74개 중앙값 (팩 전류 기준, 표본 간격 1 s)
+  EV10  veh6 0.0006    25.6788  0.2568     0.0147                 0.0571       전류 계단 52개 중앙값 (팩 전류 기준, 표본 간격 1 s)
+  EV10  veh7 0.0007    32.6436  0.2968     0.0213                 0.0719       전류 계단 95개 중앙값 (팩 전류 기준, 표본 간격 1 s)
+  EV10  veh8 0.0005    44.9863  0.2960     0.0217                 0.0732      전류 계단 124개 중앙값 (팩 전류 기준, 표본 간격 1 s)
+  EV10  veh9 0.0001    48.7763  0.3252     0.0056                 0.0173      전류 계단 127개 중앙값 (팩 전류 기준, 표본 간격 1 s)
+  EV10 veh10 0.0007    29.6614  0.2966     0.0197                 0.0664       전류 계단 74개 중앙값 (팩 전류 기준, 표본 간격 1 s)
+ veh  ocv_points soc_table_range  median_raw_minus_ocv_V  median_ir_minus_ocv_V  median_ir_drop_V
+   1          11       0.00–0.95                  0.0565                 0.0298            0.0267
+   2           9       0.00–0.87                 -0.0347                -0.0359            0.0007
+   3           9       0.00–0.94                  0.0226                 0.0104            0.0122
+   4          11       0.00–0.83                 -0.0319                -0.0410            0.0097
+   5           8       0.00–0.95                  0.0250                 0.0222            0.0012
+   6           9       0.00–0.95                  0.0040                 0.0031            0.0007
+   7          11       0.00–0.94                  0.0702                 0.0481            0.0222
+   8          13       0.00–0.96                  0.0452                 0.0267            0.0005
+   9          11       0.00–0.97                  0.0419                 0.0393            0.0002
+  10          11       0.00–0.97                  0.0435                 0.0234            0.0202
+domain  unit stage voltage position_unit  at_3.90V  at_4.00V
+  NASA B0005    초기     raw    누적 충전 비율 %      13.8      36.2
+  NASA B0005    초기      ir    누적 충전 비율 %      45.0      62.4
+  NASA B0005    중기     raw    누적 충전 비율 %       5.3      23.8
+  NASA B0005    중기      ir    누적 충전 비율 %      30.5      50.3
+  NASA B0005    후기     raw    누적 충전 비율 %       1.6      10.8
+  NASA B0005    후기      ir    누적 충전 비율 %      19.2      39.8
+  NASA B0006    초기     raw    누적 충전 비율 %      13.9      36.8
+  NASA B0006    초기      ir    누적 충전 비율 %      46.6      64.1
+  NASA B0006    중기     raw    누적 충전 비율 %       2.1      11.6
+  NASA B0006    중기      ir    누적 충전 비율 %      21.6      41.6
+  NASA B0006    후기     raw    누적 충전 비율 %       0.4       3.8
+  NASA B0006    후기      ir    누적 충전 비율 %      10.8      28.8
+  NASA B0007    초기     raw    누적 충전 비율 %      13.2      35.4
+  NASA B0007    초기      ir    누적 충전 비율 %      46.8      63.8
+  NASA B0007    중기     raw    누적 충전 비율 %       7.2      28.1
+  NASA B0007    중기      ir    누적 충전 비율 %      34.7      53.9
+  NASA B0007    후기     raw    누적 충전 비율 %       2.9      16.9
+  NASA B0007    후기      ir    누적 충전 비율 %      26.1      46.9
+  NASA B0018    초기     raw    누적 충전 비율 %       9.8      30.0
+  NASA B0018    초기      ir    누적 충전 비율 %      46.2      64.7
+  NASA B0018    중기     raw    누적 충전 비율 %       5.5      23.5
+  NASA B0018    중기      ir    누적 충전 비율 %      29.9      49.5
+  NASA B0018    후기     raw    누적 충전 비율 %       3.7      16.5
+  NASA B0018    후기      ir    누적 충전 비율 %      22.5      42.4
+  EV10  veh1           raw     BMS SOC %      71.1      84.6
+  EV10  veh1            ir     BMS SOC %      74.7      88.1
+  EV10  veh2           raw     BMS SOC %      65.2      75.3
+  EV10  veh2            ir     BMS SOC %      67.8      78.3
+  EV10  veh3           raw     BMS SOC %      76.1      86.4
+  EV10  veh3            ir     BMS SOC %      76.9      90.2
+  EV10  veh4           raw     BMS SOC %      79.0      87.8
+  EV10  veh4            ir     BMS SOC %      80.0      89.4
+  EV10  veh5           raw     BMS SOC %      82.4       NaN
+  EV10  veh5            ir     BMS SOC %      88.9       NaN
+  EV10  veh6           raw     BMS SOC %      67.7      78.5
+  EV10  veh6            ir     BMS SOC %      69.4      80.2
+  EV10  veh7           raw     BMS SOC %      62.4      72.6
+  EV10  veh7            ir     BMS SOC %      64.5      75.0
+  EV10  veh8           raw     BMS SOC %      60.7      73.2
+  EV10  veh8            ir     BMS SOC %      63.5      76.4
+  EV10  veh9           raw     BMS SOC %      54.6      64.3
+  EV10  veh9            ir     BMS SOC %      56.4      64.9
+  EV10 veh10           raw     BMS SOC %      66.8      77.0
+  EV10 veh10            ir     BMS SOC %      69.3      78.9
+method  n_ev  ev_inside_nasa_range  nn_dist_ev_to_nasa_median  nn_dist_nasa_heldout_battery_median
+    A0     9                     9                      0.001                                0.003
+    B1     9                     9                      0.985                                0.148
+    B2     9                     3                      0.545                                0.051
+    B3     9                     3                      1.489                                0.238
+    C1     9                     1                      2.599                                0.161
+    C2     9                     1                      4.088                                0.241
+runtime 160.6s

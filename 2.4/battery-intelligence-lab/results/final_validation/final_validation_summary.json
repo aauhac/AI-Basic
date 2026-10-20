@@ -1,0 +1,116 @@
+{
+  "nasa_charge": {
+    "charges": 644,
+    "valid_full_charges": 631,
+    "median_rest_before_charge_s": {
+      "B0005": 2010.5,
+      "B0006": 2010.5,
+      "B0007": 2010.5,
+      "B0018": 94.4
+    },
+    "median_i_before_onset_A": {
+      "B0005": -3.773,
+      "B0006": -3.737,
+      "B0007": -2.258,
+      "B0018": -3.576
+    },
+    "median_prev_discharge_min_v": {
+      "B0005": 2.66,
+      "B0006": 2.429,
+      "B0007": 2.101,
+      "B0018": 2.415
+    },
+    "median_charge_over_prev_capacity": 1.0113514029134014,
+    "absolute_start_soc_known": false
+  },
+  "ev10_segments": {
+    "연속": 39,
+    "": 10,
+    "겹침": 6,
+    "공백": 1
+  },
+  "coordinate_ranges_raw": {
+    "EV10@3.9": {
+      "A_observed_progress_pct": [
+        60.61090463609865,
+        84.00543590767766
+      ],
+      "B_absolute_soc_pct": [
+        54.5873104747211,
+        82.4077535700477
+      ],
+      "C_Q_over_Crated_pct": [
+        57.36012132822867,
+        81.74278155705808
+      ]
+    },
+    "EV10@4.0": {
+      "A_observed_progress_pct": [
+        70.23338463900429,
+        87.42969160579234
+      ],
+      "B_absolute_soc_pct": [
+        64.30252517123509,
+        87.7830640234369
+      ],
+      "C_Q_over_Crated_pct": [
+        67.22009897829335,
+        81.78060303893193
+      ]
+    },
+    "NASA@3.9": {
+      "A_observed_progress_pct": [
+        0.3551115845038333,
+        13.88539326886417
+      ],
+      "B_absolute_soc_pct": [
+        NaN,
+        NaN
+      ],
+      "C_Q_over_Crated_pct": [
+        0.21292553589468943,
+        14.331243874296268
+      ]
+    },
+    "NASA@4.0": {
+      "A_observed_progress_pct": [
+        3.7755135119792573,
+        36.763511060918184
+      ],
+      "B_absolute_soc_pct": [
+        NaN,
+        NaN
+      ],
+      "C_Q_over_Crated_pct": [
+        2.263804598036555,
+        37.94396258626852
+      ]
+    }
+  },
+  "ev10_default_progress_minus_bms_soc_pp": 6.186613288816119,
+  "method_b": {
+    "q_over_0.2xlabel_range": [
+      0.9997131231012999,
+      1.0659546808727602
+    ],
+    "decision": "구현하지 않음: 진행률 좌표는 총 충전량(EV10 라벨 분자)으로 정의되어 특징이 라벨에 종속"
+  },
+  "ir_decision": "C1·C2는 필수 방법에서 제외, 근사 참고 실험으로 유지",
+  "final_ev10": {
+    "final": [
+      "B3",
+      "Stacking"
+    ],
+    "unchanged_vs_transfer_selection": true,
+    "representatives": {
+      "A0": "XGBoost",
+      "B1": "XGBoost",
+      "B2": "SVR_RBF",
+      "B3": "Stacking",
+      "C1": "RandomForest",
+      "C2": "RandomForest"
+    },
+    "nasa_const": 0.7908259061394344
+  },
+  "runtime_s": 19.625194300024305
+}

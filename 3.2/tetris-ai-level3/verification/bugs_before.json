@@ -1,0 +1,21 @@
+{
+  "project": "level3",
+  "o_rotation_on_floor": {
+    "exception": "ValueError: invalid lock"
+  },
+  "receive_1_garbage_line": {
+    "game_over_after_receiving_1_line": true
+  },
+  "versus_tetris_attack": {
+    "attack_sent": 4,
+    "receiver_game_over": true
+  },
+  "rotate_in_air_then_hard_drop": {
+    "lines": 1,
+    "counted_as_t_spin": true
+  },
+  "puzzle_success_spin_counter": {
+    "success_message": true,
+    "player_spins_counter": 0
+  }
+}

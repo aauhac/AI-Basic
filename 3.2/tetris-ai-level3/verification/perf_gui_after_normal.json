@@ -1,0 +1,28 @@
+{
+  "project": "Tetris_AI_Level3_FINAL",
+  "seconds": 20.0,
+  "difficulty": "normal",
+  "loop_gap": {
+    "n": 1139,
+    "mean_ms": 17.5,
+    "p95_ms": 26.9,
+    "p99_ms": 31.2,
+    "max_ms": 43.5
+  },
+  "key_latency": {
+    "n": 127,
+    "mean_ms": 0.5,
+    "p95_ms": 2.1,
+    "p99_ms": 4.9,
+    "max_ms": 7.6
+  },
+  "stalls_over_100ms": 0,
+  "stalls_over_250ms": 0,
+  "ai_pieces": 18,
+  "ai_lines": 5,
+  "human_lines": 0,
+  "game_over": [
+    true,
+    false
+  ]
+}

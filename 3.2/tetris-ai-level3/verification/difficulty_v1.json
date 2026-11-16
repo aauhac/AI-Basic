@@ -1,0 +1,167 @@
+{
+  "solo_pieces_cap": 500,
+  "seeds": [
+    101,
+    202,
+    303,
+    404,
+    505
+  ],
+  "solo": {
+    "easy": {
+      "games": [
+        {
+          "seed": 101,
+          "pieces": 203,
+          "lines": 65,
+          "score": 30950,
+          "topped_out": true
+        },
+        {
+          "seed": 202,
+          "pieces": 144,
+          "lines": 41,
+          "score": 12850,
+          "topped_out": true
+        },
+        {
+          "seed": 303,
+          "pieces": 129,
+          "lines": 39,
+          "score": 15950,
+          "topped_out": true
+        },
+        {
+          "seed": 404,
+          "pieces": 386,
+          "lines": 138,
+          "score": 136200,
+          "topped_out": true
+        },
+        {
+          "seed": 505,
+          "pieces": 344,
+          "lines": 122,
+          "score": 112600,
+          "topped_out": true
+        }
+      ],
+      "mean_lines": 81,
+      "mean_pieces": 241.2,
+      "topouts": 5
+    },
+    "normal": {
+      "games": [
+        {
+          "seed": 101,
+          "pieces": 500,
+          "lines": 196,
+          "score": 273250,
+          "topped_out": false
+        },
+        {
+          "seed": 202,
+          "pieces": 500,
+          "lines": 193,
+          "score": 253400,
+          "topped_out": false
+        },
+        {
+          "seed": 303,
+          "pieces": 500,
+          "lines": 192,
+          "score": 251500,
+          "topped_out": false
+        },
+        {
+          "seed": 404,
+          "pieces": 500,
+          "lines": 199,
+          "score": 267650,
+          "topped_out": false
+        },
+        {
+          "seed": 505,
+          "pieces": 500,
+          "lines": 194,
+          "score": 263750,
+          "topped_out": false
+        }
+      ],
+      "mean_lines": 194.8,
+      "mean_pieces": 500,
+      "topouts": 0
+    },
+    "hard": {
+      "games": [
+        {
+          "seed": 101,
+          "pieces": 500,
+          "lines": 197,
+          "score": 253150,
+          "topped_out": false
+        },
+        {
+          "seed": 202,
+          "pieces": 500,
+          "lines": 199,
+          "score": 256250,
+          "topped_out": false
+        },
+        {
+          "seed": 303,
+          "pieces": 500,
+          "lines": 198,
+          "score": 255000,
+          "topped_out": false
+        },
+        {
+          "seed": 404,
+          "pieces": 500,
+          "lines": 198,
+          "score": 254450,
+          "topped_out": false
+        },
+        {
+          "seed": 505,
+          "pieces": 500,
+          "lines": 199,
+          "score": 259650,
+          "topped_out": false
+        }
+      ],
+      "mean_lines": 198.2,
+      "mean_pieces": 500,
+      "topouts": 0
+    }
+  },
+  "versus": {
+    "easy_vs_normal": {
+      "wins": {
+        "easy": 3,
+        "normal": 7,
+        "draw": 0
+      },
+      "matches": 10,
+      "mean_pieces": 66.2
+    },
+    "normal_vs_hard": {
+      "wins": {
+        "normal": 2,
+        "hard": 8,
+        "draw": 0
+      },
+      "matches": 10,
+      "mean_pieces": 100
+    },
+    "easy_vs_hard": {
+      "wins": {
+        "easy": 2,
+        "hard": 8,
+        "draw": 0
+      },
+      "matches": 10,
+      "mean_pieces": 65.9
+    }
+  }
+}

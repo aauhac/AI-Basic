@@ -1,0 +1,58 @@
+{
+  "project": "Tetris_AI_Level3_FINAL",
+  "o_rotation_on_floor": {
+    "cells_before": [
+      [
+        4,
+        18
+      ],
+      [
+        4,
+        19
+      ],
+      [
+        5,
+        18
+      ],
+      [
+        5,
+        19
+      ]
+    ],
+    "cells_after_rotate": [
+      [
+        4,
+        18
+      ],
+      [
+        4,
+        19
+      ],
+      [
+        5,
+        18
+      ],
+      [
+        5,
+        19
+      ]
+    ],
+    "valid_after_rotate": true,
+    "hard_drop": "ok"
+  },
+  "receive_1_garbage_line": {
+    "game_over_after_receiving_1_line": false
+  },
+  "versus_tetris_attack": {
+    "attack_sent": 4,
+    "receiver_game_over": false
+  },
+  "rotate_in_air_then_hard_drop": {
+    "lines": 1,
+    "counted_as_t_spin": false
+  },
+  "puzzle_success_spin_counter": {
+    "success_message": true,
+    "player_spins_counter": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "project": "level3",
+  "seconds": 24.2,
+  "difficulty": "hard",
+  "loop_gap": {
+    "n": 7,
+    "mean_ms": 2774.5,
+    "p95_ms": 4038.2,
+    "p99_ms": 4038.2,
+    "max_ms": 6851.8
+  },
+  "key_latency": {
+    "n": 8,
+    "mean_ms": 1202.4,
+    "p95_ms": 2221.4,
+    "p99_ms": 2221.4,
+    "max_ms": 2452.8
+  },
+  "stalls_over_100ms": 7,
+  "stalls_over_250ms": 7,
+  "ai_pieces": 10,
+  "ai_lines": 2,
+  "human_lines": 0,
+  "game_over": [
+    false,
+    false
+  ],
+  "ai_pieces_note": "original Player has no piece counter; estimated from board cells"
+}

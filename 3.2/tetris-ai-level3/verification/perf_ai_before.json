@@ -1,0 +1,30 @@
+{
+  "project": "level3",
+  "python": "3.12.4",
+  "machine": "Intel64 Family 6 Model 158 Stepping 10, GenuineIntel",
+  "boards": 100,
+  "repeats": 3,
+  "difficulties": {
+    "easy": {
+      "n": 300,
+      "mean_ms": 36.39,
+      "median_ms": 31.42,
+      "p95_ms": 67.6,
+      "max_ms": 75.07
+    },
+    "normal": {
+      "n": 300,
+      "mean_ms": 36.35,
+      "median_ms": 30.85,
+      "p95_ms": 66.46,
+      "max_ms": 82.96
+    },
+    "hard": {
+      "n": 300,
+      "mean_ms": 859.09,
+      "median_ms": 827.0,
+      "p95_ms": 2084.33,
+      "max_ms": 2440.8
+    }
+  }
+}

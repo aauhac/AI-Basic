@@ -1,0 +1,4441 @@
+[
+ {
+  "t": 0.0,
+  "kind": "card",
+  "value": "자동화된 GUI 입력 시연",
+  "body": "실제 프로그램(python run.py)을 실행하고 Windows SendInput 키보드·마우스 입력만으로 조작했습니다.\n게임 창만 PrintWindow로 녹화 · 게임 내부 상태(보드·블록·점수·승패)는 변경하지 않음"
+ },
+ {
+  "t": 0.0,
+  "kind": "card",
+  "value": "장면 1 · 프로그램 실행",
+  "body": "프로젝트 폴더에서 python run.py 실행 → 메인 화면"
+ },
+ {
+  "t": 0.0,
+  "kind": "launch",
+  "value": "python run.py",
+  "session": 1
+ },
+ {
+  "t": 1.3884,
+  "kind": "window",
+  "value": "TETRIS · HUMAN × AI | Level 3",
+  "pid": 26224,
+  "session": 1
+ },
+ {
+  "t": 1.5956,
+  "kind": "buttons",
+  "value": "{'modes': {'solo': (np.int64(344), 54), 'two': (np.int64(409), 54), 'versus': (np.int64(482), 54), 'ai': (np.int64(559), 54), 'puzzle': (np.int64(647), 54)}, 'start': (np.int64(93), 101), 'pause': (np.int64(255), 101), 'stop': (np.int64(394), 101), 'hint': (np.int64(513), 101), 'records': (np.int64(615), 101), 'diff': {'easy': (np.int64(750), 101), 'normal': (np.int64(800), 101), 'hard': (np.int64(856), 101)}, 'coach': (np.int64(940), 101)}"
+ },
+ {
+  "t": 1.5957,
+  "kind": "seg_start",
+  "value": "launch",
+  "speed": 1.0,
+  "session": 1
+ },
+ {
+  "t": 1.5957,
+  "kind": "caption",
+  "value": "python run.py로 실행한 실제 메인 화면 · 저장된 기록(records.json) 표시"
+ },
+ {
+  "t": 4.1896,
+  "kind": "snap",
+  "value": "01_main"
+ },
+ {
+  "t": 4.1896,
+  "kind": "caption",
+  "value": "게임 모드 선택 (마우스 클릭)"
+ },
+ {
+  "t": 4.7389,
+  "kind": "click",
+  "value": "solo"
+ },
+ {
+  "t": 6.0589,
+  "kind": "click",
+  "value": "two"
+ },
+ {
+  "t": 7.3527,
+  "kind": "click",
+  "value": "versus"
+ },
+ {
+  "t": 8.6666,
+  "kind": "click",
+  "value": "ai"
+ },
+ {
+  "t": 9.9597,
+  "kind": "click",
+  "value": "puzzle"
+ },
+ {
+  "t": 10.7111,
+  "kind": "caption",
+  "value": "AI 난이도 선택 (쉬움 · 보통 · 어려움)"
+ },
+ {
+  "t": 11.2606,
+  "kind": "click",
+  "value": "easy"
+ },
+ {
+  "t": 12.5533,
+  "kind": "click",
+  "value": "normal"
+ },
+ {
+  "t": 13.8626,
+  "kind": "click",
+  "value": "hard"
+ },
+ {
+  "t": 15.1544,
+  "kind": "click",
+  "value": "normal"
+ },
+ {
+  "t": 15.8223,
+  "kind": "snap",
+  "value": "02_mode_select"
+ },
+ {
+  "t": 15.8223,
+  "kind": "seg_end",
+  "value": null,
+  "session": 1
+ },
+ {
+  "t": 15.8223,
+  "kind": "card",
+  "value": "장면 2 · 1인용 테트리스",
+  "body": "이동 · 회전 · Wall Kick · Hard Drop · Next/Hold · 줄 제거 · 점수"
+ },
+ {
+  "t": 15.8223,
+  "kind": "seg_start",
+  "value": "solo",
+  "speed": 1.0,
+  "session": 1
+ },
+ {
+  "t": 16.3679,
+  "kind": "click",
+  "value": "solo"
+ },
+ {
+  "t": 16.8685,
+  "kind": "caption",
+  "value": "1인용 선택 → R 키로 시작"
+ },
+ {
+  "t": 16.8693,
+  "kind": "key",
+  "value": "R"
+ },
+ {
+  "t": 17.6244,
+  "kind": "boards",
+  "value": "[BoardGeom(x0=345, y0=194, cell=29)]"
+ },
+ {
+  "t": 17.8214,
+  "kind": "caption",
+  "value": "회전(↑) 후 왼쪽 벽까지 이동(←)"
+ },
+ {
+  "t": 17.8228,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 18.205,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 18.4376,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 18.6698,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 18.901,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 19.132,
+  "kind": "caption",
+  "value": "벽에 붙은 상태에서 다시 회전(↑) → SRS Wall Kick으로 옆 칸으로 밀려 회전 성공"
+ },
+ {
+  "t": 19.7327,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 20.6867,
+  "kind": "kick_check",
+  "value": true,
+  "expected": [
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    2,
+    2
+   ]
+  ],
+  "observed": [
+   [
+    0,
+    4
+   ],
+   [
+    1,
+    4
+   ],
+   [
+    2,
+    4
+   ],
+   [
+    2,
+    5
+   ]
+  ],
+  "match": true
+ },
+ {
+  "t": 21.2331,
+  "kind": "snap",
+  "value": "03_wall_kick"
+ },
+ {
+  "t": 21.2331,
+  "kind": "caption",
+  "value": "Hard Drop (Space)"
+ },
+ {
+  "t": 21.2336,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 21.8423,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 22.1565,
+  "kind": "caption",
+  "value": "Next(다음 블록 3개)와 Hold: C 키로 현재 블록을 보관 → 다음 블록이 나옴"
+ },
+ {
+  "t": 22.6578,
+  "kind": "key",
+  "value": "C"
+ },
+ {
+  "t": 23.9427,
+  "kind": "snap",
+  "value": "04_hold_next"
+ },
+ {
+  "t": 24.131,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 24.4247,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 24.5414,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 24.6582,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 24.9504,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 25.0674,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 25.1841,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 25.3008,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 25.5929,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 25.7103,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 25.8269,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 25.944,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 26.2559,
+  "kind": "speed",
+  "value": 2.0
+ },
+ {
+  "t": 26.2559,
+  "kind": "caption",
+  "value": "블록 쌓기 (2배속 편집)"
+ },
+ {
+  "t": 26.2581,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 26.3745,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 26.702,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 26.8185,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 27.132,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 27.2489,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 27.3667,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 27.4829,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 27.5997,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 27.8823,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 27.9993,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 28.1156,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 28.2323,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 28.5128,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 28.6297,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 28.7466,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 29.0617,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 29.1782,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 29.2952,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 29.4128,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 29.5291,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 29.6463,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 29.9597,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 30.0761,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 30.1926,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 30.309,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 30.6329,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 30.7489,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 30.8661,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 31.1482,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 31.2648,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 31.3817,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 31.4985,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 31.615,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 31.9265,
+  "kind": "speed",
+  "value": 1.0
+ },
+ {
+  "t": 31.9265,
+  "kind": "caption",
+  "value": "2줄 동시 제거 → 점수 증가 (STATUS의 SCORE · LINES)"
+ },
+ {
+  "t": 31.9269,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 32.043,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 32.1606,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 32.2773,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 32.3938,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 32.5109,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 32.8354,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 32.9518,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 33.07,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 33.1868,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 33.3031,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 33.5902,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 33.7068,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 33.8235,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 34.1167,
+  "kind": "caption",
+  "value": "3줄 동시 제거 → 점수 증가 (STATUS의 SCORE · LINES)"
+ },
+ {
+  "t": 34.1172,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 34.2348,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 34.3516,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 34.4678,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 34.5843,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 34.7009,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 34.9828,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 35.1004,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 35.3821,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 35.5007,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 35.7846,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 35.9018,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 36.0188,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 36.1349,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 36.2519,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 36.3681,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 36.4856,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 36.7686,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 36.8857,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 37.0026,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 37.1201,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 37.2363,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 39.0247,
+  "kind": "snap",
+  "value": "05_solo_lines"
+ },
+ {
+  "t": 39.0247,
+  "kind": "caption",
+  "value": "Esc: 게임 종료 (중단 기록)"
+ },
+ {
+  "t": 39.0253,
+  "kind": "key",
+  "value": "Esc"
+ },
+ {
+  "t": 40.2566,
+  "kind": "seg_end",
+  "value": null,
+  "session": 1
+ },
+ {
+  "t": 40.2566,
+  "kind": "card",
+  "value": "장면 3 · 2인 동시 플레이",
+  "body": "P1: ←→↑ Space · P2: A D W F — 서로 다른 키로 각자의 보드를 독립 조작"
+ },
+ {
+  "t": 40.2566,
+  "kind": "seg_start",
+  "value": "two",
+  "speed": 1.0,
+  "session": 1
+ },
+ {
+  "t": 40.8171,
+  "kind": "click",
+  "value": "two"
+ },
+ {
+  "t": 41.3177,
+  "kind": "key",
+  "value": "R"
+ },
+ {
+  "t": 42.0477,
+  "kind": "boards",
+  "value": "[BoardGeom(x0=197, y0=219, cell=29), BoardGeom(x0=823, y0=219, cell=29)]"
+ },
+ {
+  "t": 42.0477,
+  "kind": "caption",
+  "value": "P1(방향키·Space)과 P2(A·D·W·F)가 동시에 입력 · 보드·점수·Next 독립"
+ },
+ {
+  "t": 42.2537,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 42.298,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 42.4145,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 42.4457,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 42.5622,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 42.5941,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 42.7104,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 42.7425,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 43.024,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 43.114,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 43.1454,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 43.2629,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 43.2941,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 43.4257,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 43.557,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 43.6033,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 43.7202,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 43.7516,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 43.8829,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 44.0434,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 44.1598,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 44.2429,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 44.2764,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 44.375,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 44.4062,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 44.5225,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 44.5534,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 44.685,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 44.8166,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 44.8622,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 45.1438,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 45.2419,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 45.2731,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 45.5723,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 45.6173,
+  "kind": "key",
+  "value": "Z"
+ },
+ {
+  "t": 45.7336,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 45.7644,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 45.8807,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 45.9116,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 46.0288,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 46.0596,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 46.1766,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 46.2078,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 46.491,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 46.5813,
+  "kind": "key",
+  "value": "E"
+ },
+ {
+  "t": 46.6127,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 46.729,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 46.7601,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 46.8771,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 46.9086,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 47.0264,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 47.1432,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 47.2752,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 47.4063,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 47.5399,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 47.5707,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 47.6869,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 47.7183,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 48.0256,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 48.0702,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 48.1869,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 48.2184,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 48.3349,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 48.3663,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 48.4977,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 48.6294,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 48.6767,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 48.7936,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 48.9104,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 49.0141,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 49.0452,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 49.1628,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 49.2793,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 49.413,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 49.5458,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 49.6454,
+  "kind": "key",
+  "value": "Z"
+ },
+ {
+  "t": 49.6773,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 49.7622,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 49.8802,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 49.9763,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 50.0073,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 50.125,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 50.1562,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 50.2732,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 50.3042,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 50.4205,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 50.4515,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 50.5852,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 50.7168,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 50.762,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 50.88,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 50.997,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 51.0999,
+  "kind": "key",
+  "value": "E"
+ },
+ {
+  "t": 51.131,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 51.2498,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 51.2813,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 51.4136,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 51.5448,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 51.597,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 51.7131,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 51.8294,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 51.9605,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 52.0922,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 52.2092,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 52.2404,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 52.3718,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 52.5503,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 52.6825,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 52.7136,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 52.8309,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 52.948,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 53.0528,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 53.0842,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 53.2161,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 53.3485,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 53.4155,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 53.5323,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 53.649,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 53.6963,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 53.8129,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 53.8439,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 53.9606,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 53.9925,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 54.1092,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 54.1404,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 54.2577,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 54.2884,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 54.5838,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 54.6282,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 54.7451,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 54.7768,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 54.8934,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 54.9246,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 55.0412,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 55.0723,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 55.2041,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 55.3352,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 55.4017,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 55.4669,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 55.5187,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 55.6347,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 55.7653,
+  "kind": "key",
+  "value": "E"
+ },
+ {
+  "t": 55.7961,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 55.9139,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 55.9449,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 56.0621,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 56.0936,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 56.2252,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 56.3564,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 56.4034,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 56.5198,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 56.6356,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 56.7392,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 56.7701,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 56.8863,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 56.9177,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 57.0342,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 57.0654,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 57.1966,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 57.3592,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 57.4755,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 57.5274,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 57.6439,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 57.675,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 57.8067,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 57.939,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 58.0157,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 58.0705,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 58.1323,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 58.202,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 58.2497,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 58.3364,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 58.3678,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 58.6523,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 58.7198,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 58.7689,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 58.8517,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 58.8852,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 58.9834,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 59.1905,
+  "kind": "key",
+  "value": "Z"
+ },
+ {
+  "t": 59.2908,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 59.3218,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 59.4384,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 59.4696,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 59.5857,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 59.6172,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 59.7336,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 59.85,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 59.9547,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 59.9858,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 60.1185,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 60.2511,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 60.2959,
+  "kind": "key",
+  "value": "Z"
+ },
+ {
+  "t": 60.4127,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 60.4439,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 60.5611,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 60.5923,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 60.7094,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 60.7404,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 61.0327,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 61.0785,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 61.1953,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 61.2266,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 61.3433,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 61.3754,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 61.4917,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 61.5239,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 61.6406,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 61.6718,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 61.7884,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 61.9872,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 62.0707,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 62.1192,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 62.374,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 62.4723,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 62.5035,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 62.6197,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 62.6508,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 62.7839,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 62.9753,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 63.09,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 63.1207,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 63.2533,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 63.3848,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 63.44,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 63.5164,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 63.5565,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 63.6735,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 63.79,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 63.8562,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 63.9065,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 63.9884,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 64.0228,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 64.1966,
+  "kind": "snap",
+  "value": "06_two_players"
+ },
+ {
+  "t": 64.9978,
+  "kind": "key",
+  "value": "Esc"
+ },
+ {
+  "t": 66.0291,
+  "kind": "seg_end",
+  "value": null,
+  "session": 1
+ },
+ {
+  "t": 66.0291,
+  "kind": "card",
+  "value": "장면 4 · 2인 대전 · 공격",
+  "body": "2줄 이상 동시 제거 → 상대에게 방해 줄 전송 (편집으로 대기 구간 2배속)"
+ },
+ {
+  "t": 66.0291,
+  "kind": "seg_start",
+  "value": "versus",
+  "speed": 1.0,
+  "session": 1
+ },
+ {
+  "t": 66.5872,
+  "kind": "click",
+  "value": "versus"
+ },
+ {
+  "t": 67.0876,
+  "kind": "key",
+  "value": "R"
+ },
+ {
+  "t": 67.8585,
+  "kind": "boards",
+  "value": "[BoardGeom(x0=197, y0=219, cell=29), BoardGeom(x0=823, y0=219, cell=29)]"
+ },
+ {
+  "t": 67.8585,
+  "kind": "caption",
+  "value": "2인 대전 시작 · P1은 오른쪽 끝 한 줄을 비워 여러 줄 동시 제거를 노림"
+ },
+ {
+  "t": 68.0213,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 68.0664,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 68.1837,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 68.2146,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 68.3311,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 68.3625,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 68.6795,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 68.7269,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 68.8432,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 68.8751,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 69.1904,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 69.2351,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 69.3523,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 69.3834,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 69.4996,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 69.5305,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 69.6631,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 69.8144,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 69.9311,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 69.998,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 70.0473,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 70.1297,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 70.1639,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 70.2611,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 70.2929,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 70.4237,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 70.555,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 70.6017,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 70.718,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 70.7499,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 70.8664,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 70.898,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 71.0141,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 71.1322,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 71.215,
+  "kind": "key",
+  "value": "E"
+ },
+ {
+  "t": 71.2483,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 71.3468,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 71.4792,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 71.5646,
+  "kind": "key",
+  "value": "Z"
+ },
+ {
+  "t": 71.6111,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 71.6811,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 71.7423,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 71.798,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 71.8737,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 71.9148,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 72.0319,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 72.1483,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 72.1966,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 72.3284,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 72.4606,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 72.505,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 72.6219,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 72.6527,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 72.7693,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 72.8006,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 72.8725,
+  "kind": "speed",
+  "value": 2.0
+ },
+ {
+  "t": 72.8725,
+  "kind": "caption",
+  "value": "대전 진행 (2배속 편집)"
+ },
+ {
+  "t": 73.1278,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 73.1729,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 73.2893,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 73.3208,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 73.4377,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 73.5546,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 73.6385,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 73.6711,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 73.7699,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 73.8011,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 73.9331,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 74.0656,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 74.1098,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 74.4265,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 74.4706,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 74.5868,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 74.6176,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 74.7338,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 74.7649,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 74.8827,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 74.9992,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 75.137,
+  "kind": "speed",
+  "value": 1.0
+ },
+ {
+  "t": 75.137,
+  "kind": "caption",
+  "value": "P2 3줄 동시 제거 → 상대에게 공격 전송 · 상대는 다음 블록 고정 때 회색 방해 줄을 받음"
+ },
+ {
+  "t": 75.1375,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 75.1684,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 75.2999,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 75.4324,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 75.4765,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 75.5931,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 75.624,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 75.7562,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 75.8881,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 75.9349,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 76.0522,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 76.1696,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 76.2491,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 76.3805,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 76.4511,
+  "kind": "key",
+  "value": "Z"
+ },
+ {
+  "t": 76.5134,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 76.5676,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 76.6447,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 76.6854,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 76.7763,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 76.8074,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 76.9241,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 76.9557,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 77.0721,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 77.3216,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 77.3916,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 77.4529,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 77.5079,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 77.5845,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 77.6247,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 77.7417,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 77.8581,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 77.9083,
+  "kind": "key",
+  "value": "E"
+ },
+ {
+  "t": 78.0252,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 78.0563,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 78.1881,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 78.3198,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 78.3675,
+  "kind": "caption",
+  "value": "P1 4줄 동시 제거 → 상대에게 공격 전송 · 상대는 다음 블록 고정 때 회색 방해 줄을 받음"
+ },
+ {
+  "t": 78.368,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 78.4853,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 78.5167,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 78.6332,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 78.6644,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 78.7814,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 78.8984,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 79.0154,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 79.0696,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 79.2017,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 79.3341,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 79.3788,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 79.4963,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 79.5274,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 79.6592,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 79.7907,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 79.8421,
+  "kind": "key",
+  "value": "Z"
+ },
+ {
+  "t": 79.9583,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 80.0758,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 80.1549,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 80.2865,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 80.3883,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 80.4192,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 80.5382,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 80.6545,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 80.7349,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 80.7712,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 80.8681,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 80.9995,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 81.0732,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 81.1314,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 81.191,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 81.2634,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 81.3075,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 81.4242,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 81.5414,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 81.5882,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 81.7199,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 81.853,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 81.8976,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 82.0137,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 82.045,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 82.1764,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 82.308,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 82.355,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 82.4714,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 82.5882,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 82.6938,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 82.7251,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 82.8429,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 82.8738,
+  "kind": "key",
+  "value": "D"
+ },
+ {
+  "t": 83.0054,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 83.1883,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 83.3048,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 83.3525,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 83.3829,
+  "kind": "speed",
+  "value": 2.0
+ },
+ {
+  "t": 83.383,
+  "kind": "caption",
+  "value": "대전 진행 (2배속 편집)"
+ },
+ {
+  "t": 83.4691,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 83.5005,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 83.6168,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 83.6476,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 83.7651,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 83.7962,
+  "kind": "key",
+  "value": "A"
+ },
+ {
+  "t": 83.9274,
+  "kind": "key",
+  "value": "F"
+ },
+ {
+  "t": 84.0921,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 84.2086,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 84.2762,
+  "kind": "key",
+  "value": "W"
+ },
+ {
+  "t": 84.3247,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 84.3765,
+  "kind": "speed",
+  "value": 1.0
+ },
+ {
+  "t": 84.4765,
+  "kind": "snap",
+  "value": "07_versus_attack"
+ },
+ {
+  "t": 85.2773,
+  "kind": "key",
+  "value": "Esc"
+ },
+ {
+  "t": 86.3094,
+  "kind": "seg_end",
+  "value": null,
+  "session": 1
+ },
+ {
+  "t": 86.31,
+  "kind": "card",
+  "value": "장면 5 · 인간 vs AI",
+  "body": "사람 쪽(P1)은 자동 키 입력 · 오른쪽 AI는 게임 자체 AI가 직접 판단·조작"
+ },
+ {
+  "t": 86.31,
+  "kind": "seg_start",
+  "value": "ai",
+  "speed": 1.0,
+  "session": 1
+ },
+ {
+  "t": 86.8682,
+  "kind": "click",
+  "value": "ai"
+ },
+ {
+  "t": 87.3685,
+  "kind": "caption",
+  "value": "AI 난이도 선택: 쉬움 → 보통 → 어려움"
+ },
+ {
+  "t": 87.9369,
+  "kind": "click",
+  "value": "easy"
+ },
+ {
+  "t": 89.3136,
+  "kind": "click",
+  "value": "normal"
+ },
+ {
+  "t": 90.6592,
+  "kind": "click",
+  "value": "hard"
+ },
+ {
+  "t": 91.4597,
+  "kind": "key",
+  "value": "R"
+ },
+ {
+  "t": 92.1991,
+  "kind": "boards",
+  "value": "[BoardGeom(x0=197, y0=219, cell=29), BoardGeom(x0=823, y0=219, cell=29)]"
+ },
+ {
+  "t": 92.1992,
+  "kind": "caption",
+  "value": "AI(어려움)가 목표 위치(금색 점선)와 평가 점수를 계산하고 실제 키 동작으로 이동 · 계산은 백그라운드 스레드"
+ },
+ {
+  "t": 92.3657,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 92.4829,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 92.5997,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 92.7191,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 92.8356,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 93.154,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 93.2702,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 93.6138,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 93.7304,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 93.8467,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 93.9637,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 94.081,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 94.1974,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 94.5363,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 94.6528,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 94.9337,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 95.05,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 95.1673,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 95.2845,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 95.5662,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 95.6827,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 95.7994,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 96.0952,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 96.2117,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 96.3285,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 96.4448,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 96.562,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 96.6787,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 96.7967,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 97.0935,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 97.2103,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 97.3265,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 97.4431,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 97.7347,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 97.8505,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 97.9676,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 98.0842,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 98.201,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 98.3173,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 98.6192,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 98.7353,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 98.8522,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 98.9689,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 99.3109,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 99.4277,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 99.7224,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 99.8388,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 99.9556,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 100.072,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 100.1898,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 100.487,
+  "kind": "key",
+  "value": "Z"
+ },
+ {
+  "t": 100.6037,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 100.7214,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 100.8378,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 101.121,
+  "kind": "key",
+  "value": "Z"
+ },
+ {
+  "t": 101.2374,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 101.3538,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 101.4704,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 101.5872,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 101.7047,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 101.822,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 102.1342,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 102.2504,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 102.3707,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 102.4868,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 102.6047,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 102.9392,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 103.0559,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 103.3394,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 103.4558,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 103.5734,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 103.6896,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 103.8062,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 104.0893,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 104.2052,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 104.3218,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 104.4388,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 104.5552,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 104.6721,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 105.0086,
+  "kind": "key",
+  "value": "Z"
+ },
+ {
+  "t": 105.1254,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 105.2421,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 105.3588,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 105.475,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 105.5909,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 105.874,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 105.99,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 106.1075,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 106.2241,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 106.3438,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 106.4603,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 106.7522,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 106.869,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 107.1571,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 107.275,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 107.3916,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 107.5089,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 107.7927,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 107.909,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 108.0254,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 108.1432,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 108.2592,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 108.595,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 108.7112,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 108.8279,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 108.945,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 109.0619,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 109.1791,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 109.4714,
+  "kind": "key",
+  "value": "Z"
+ },
+ {
+  "t": 109.5895,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 109.706,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 109.9896,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 110.1062,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 110.2237,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 110.5367,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 110.6532,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 110.77,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 111.0636,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 111.1798,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 111.297,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 111.4138,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 111.5302,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 111.6466,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 113.278,
+  "kind": "agent_idle",
+  "value": "P1"
+ },
+ {
+  "t": 113.3151,
+  "kind": "snap",
+  "value": "08_human_vs_ai"
+ },
+ {
+  "t": 113.3151,
+  "kind": "caption",
+  "value": "결과 화면을 보여 주기 위해 P1(자동 입력)이 회전·이동 없이 Space만 눌러 블록을 쌓음 → Top-out"
+ },
+ {
+  "t": 113.3157,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 114.2014,
+  "kind": "caption",
+  "value": "AI 승리 · 경기 결과가 records.json에 자동 저장됨"
+ },
+ {
+  "t": 117.2686,
+  "kind": "snap",
+  "value": "09_ai_result"
+ },
+ {
+  "t": 117.2686,
+  "kind": "seg_end",
+  "value": null,
+  "session": 1
+ },
+ {
+  "t": 117.2689,
+  "kind": "card",
+  "value": "장면 6 · AI 도우미",
+  "body": "블록 위치에 따라 평가 점수와 항목(줄 제거·높이·구멍·평탄화)이 실시간으로 바뀜"
+ },
+ {
+  "t": 117.2689,
+  "kind": "seg_start",
+  "value": "coach",
+  "speed": 1.0,
+  "session": 1
+ },
+ {
+  "t": 117.8446,
+  "kind": "click",
+  "value": "solo"
+ },
+ {
+  "t": 118.3451,
+  "kind": "key",
+  "value": "R"
+ },
+ {
+  "t": 119.1742,
+  "kind": "boards",
+  "value": "[BoardGeom(x0=345, y0=194, cell=29)]"
+ },
+ {
+  "t": 119.1742,
+  "kind": "caption",
+  "value": "AI 도우미 ON: 오른쪽 패널 = 지금 위치에 떨어뜨렸을 때의 평가, 청록 점선 = AI 추천 위치"
+ },
+ {
+  "t": 119.3011,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 119.5135,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 119.7255,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 119.9375,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 120.1493,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 120.9897,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 121.2015,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 121.4135,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 121.6255,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 122.4666,
+  "kind": "caption",
+  "value": "블록을 한 칸씩 이동·회전 → 현재 위치 평가와 항목별 점수가 변함"
+ },
+ {
+  "t": 122.467,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 123.2483,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 124.0298,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 124.8119,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 125.5937,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 126.3757,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 127.1571,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 127.9392,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 128.7207,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 129.5832,
+  "kind": "snap",
+  "value": "10_coach_eval"
+ },
+ {
+  "t": 129.5876,
+  "kind": "caption",
+  "value": "AI 추천 위치(청록 점선)로 이동 후 Space"
+ },
+ {
+  "t": 129.5879,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 129.9695,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 130.3512,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 130.7324,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 131.1138,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 131.995,
+  "kind": "caption",
+  "value": "AI 도우미 OFF (체크박스 클릭) → 추천 표시와 평가 패널이 사라짐"
+ },
+ {
+  "t": 132.5553,
+  "kind": "click",
+  "value": "coach off"
+ },
+ {
+  "t": 133.3209,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 133.5029,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 133.6841,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 134.0726,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 134.2543,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 134.4361,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 134.6178,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 135.0172,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 135.1985,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 135.568,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 135.7495,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 135.9318,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 136.1133,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 136.4967,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 136.6794,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 136.8619,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 137.0435,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 137.2252,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 137.4065,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 137.7633,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 137.945,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 138.1268,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 138.3083,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 138.5311,
+  "kind": "snap",
+  "value": "11_coach_off"
+ },
+ {
+  "t": 138.5312,
+  "kind": "caption",
+  "value": "AI 도우미 다시 ON"
+ },
+ {
+  "t": 139.0924,
+  "kind": "click",
+  "value": "coach on"
+ },
+ {
+  "t": 139.8695,
+  "kind": "key",
+  "value": "Z"
+ },
+ {
+  "t": 140.1014,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 140.3331,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 140.566,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 140.7978,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 141.0294,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 141.261,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 141.6774,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 141.9088,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 142.1402,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 142.3726,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 142.6041,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 143.0072,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 143.2385,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 143.4706,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 143.8924,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 144.1245,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 144.3555,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 144.5907,
+  "kind": "key",
+  "value": "Esc"
+ },
+ {
+  "t": 145.622,
+  "kind": "seg_end",
+  "value": null,
+  "session": 1
+ },
+ {
+  "t": 145.6223,
+  "kind": "card",
+  "value": "장면 7 · T-Spin 퍼즐 (어려움)",
+  "body": "게임이 생성·검증한 퍼즐 · H 키 단계별 힌트 · I → O → T 순서 · 실제 키 입력으로 풀이"
+ },
+ {
+  "t": 145.6223,
+  "kind": "seg_start",
+  "value": "puzzle",
+  "speed": 1.0,
+  "session": 1
+ },
+ {
+  "t": 146.1817,
+  "kind": "click",
+  "value": "puzzle"
+ },
+ {
+  "t": 147.2254,
+  "kind": "click",
+  "value": "hard"
+ },
+ {
+  "t": 147.7257,
+  "kind": "caption",
+  "value": "R 키 → 게임이 어려움 퍼즐을 생성·검증하여 출제"
+ },
+ {
+  "t": 147.7261,
+  "kind": "key",
+  "value": "R"
+ },
+ {
+  "t": 149.4025,
+  "kind": "boards",
+  "value": "[BoardGeom(x0=345, y0=194, cell=29)]"
+ },
+ {
+  "t": 150.4592,
+  "kind": "snap",
+  "value": "12_puzzle_start"
+ },
+ {
+  "t": 150.6205,
+  "kind": "caption",
+  "value": "I 블록 · H 키로 힌트 확인 (1단계: 목표 열 → 2단계: 목표 칸 금색 표시 → 3단계: 정답 조작)"
+ },
+ {
+  "t": 150.6215,
+  "kind": "key",
+  "value": "H"
+ },
+ {
+  "t": 151.8171,
+  "kind": "key",
+  "value": "H"
+ },
+ {
+  "t": 153.065,
+  "kind": "key",
+  "value": "H"
+ },
+ {
+  "t": 154.2818,
+  "kind": "puzzle_target",
+  "value": "I",
+  "cells": [
+   [
+    2,
+    17
+   ],
+   [
+    3,
+    17
+   ],
+   [
+    4,
+    17
+   ],
+   [
+    5,
+    17
+   ]
+  ]
+ },
+ {
+  "t": 154.3334,
+  "kind": "snap",
+  "value": "13_puzzle_hint"
+ },
+ {
+  "t": 154.3335,
+  "kind": "caption",
+  "value": "힌트의 금색 칸을 보고 I 블록을 키보드(← → ↓ ↑/Z)로 이동 후 Space"
+ },
+ {
+  "t": 154.4307,
+  "kind": "key",
+  "value": "←"
+ },
+ {
+  "t": 155.1226,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 156.4904,
+  "kind": "caption",
+  "value": "O 블록 · H 키로 힌트 확인 (1단계: 목표 열 → 2단계: 목표 칸 금색 표시)"
+ },
+ {
+  "t": 156.491,
+  "kind": "key",
+  "value": "H"
+ },
+ {
+  "t": 157.6862,
+  "kind": "key",
+  "value": "H"
+ },
+ {
+  "t": 158.8859,
+  "kind": "puzzle_target",
+  "value": "O",
+  "cells": [
+   [
+    8,
+    18
+   ],
+   [
+    8,
+    19
+   ],
+   [
+    9,
+    18
+   ],
+   [
+    9,
+    19
+   ]
+  ]
+ },
+ {
+  "t": 158.8859,
+  "kind": "caption",
+  "value": "힌트의 금색 칸을 보고 O 블록을 키보드(← → ↓ ↑/Z)로 이동 후 Space"
+ },
+ {
+  "t": 158.9727,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 159.3062,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 159.638,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 159.9751,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 160.6956,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 162.0477,
+  "kind": "caption",
+  "value": "T 블록 · H 키로 힌트 확인 (1단계: 목표 열 → 2단계: 목표 칸 금색 표시 → 3단계: 정답 조작)"
+ },
+ {
+  "t": 162.0482,
+  "kind": "key",
+  "value": "H"
+ },
+ {
+  "t": 163.2432,
+  "kind": "key",
+  "value": "H"
+ },
+ {
+  "t": 164.4584,
+  "kind": "key",
+  "value": "H"
+ },
+ {
+  "t": 165.6911,
+  "kind": "puzzle_target",
+  "value": "T",
+  "cells": [
+   [
+    5,
+    18
+   ],
+   [
+    6,
+    18
+   ],
+   [
+    6,
+    19
+   ],
+   [
+    7,
+    18
+   ]
+  ]
+ },
+ {
+  "t": 165.6911,
+  "kind": "caption",
+  "value": "힌트의 금색 칸을 보고 T 블록을 키보드(← → ↓ ↑/Z)로 이동 · 마지막 동작은 회전 → T-Spin"
+ },
+ {
+  "t": 165.7733,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 166.0974,
+  "kind": "key",
+  "value": "→"
+ },
+ {
+  "t": 166.4245,
+  "kind": "key",
+  "value": "↓"
+ },
+ {
+  "t": 166.7266,
+  "kind": "key",
+  "value": "↓"
+ },
+ {
+  "t": 167.0203,
+  "kind": "key",
+  "value": "↓"
+ },
+ {
+  "t": 167.3099,
+  "kind": "key",
+  "value": "↓"
+ },
+ {
+  "t": 167.6391,
+  "kind": "key",
+  "value": "↓"
+ },
+ {
+  "t": 167.9518,
+  "kind": "key",
+  "value": "↓"
+ },
+ {
+  "t": 168.24,
+  "kind": "key",
+  "value": "↓"
+ },
+ {
+  "t": 168.519,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 168.8005,
+  "kind": "key",
+  "value": "↓"
+ },
+ {
+  "t": 169.1361,
+  "kind": "key",
+  "value": "↑"
+ },
+ {
+  "t": 170.151,
+  "kind": "key",
+  "value": "Space"
+ },
+ {
+  "t": 171.3827,
+  "kind": "caption",
+  "value": "T-Spin Double 성공 · 퍼즐 성공 기록 갱신 (T-Spin 횟수 +1)"
+ },
+ {
+  "t": 174.94,
+  "kind": "snap",
+  "value": "14_puzzle_success"
+ },
+ {
+  "t": 174.94,
+  "kind": "seg_end",
+  "value": null,
+  "session": 1
+ },
+ {
+  "t": 174.9404,
+  "kind": "card",
+  "value": "장면 8 · 기록 저장",
+  "body": "기록 창 확인 → 프로그램 종료 → 다시 실행해도 records.json에서 기록 유지"
+ },
+ {
+  "t": 174.9404,
+  "kind": "seg_start",
+  "value": "records",
+  "speed": 1.0,
+  "session": 1
+ },
+ {
+  "t": 174.9404,
+  "kind": "caption",
+  "value": "☰ 기록 버튼 → 최고 점수 · 승패 · 퍼즐 성공 기록"
+ },
+ {
+  "t": 175.5142,
+  "kind": "click",
+  "value": "records"
+ },
+ {
+  "t": 180.4734,
+  "kind": "snap",
+  "value": "15_records_window"
+ },
+ {
+  "t": 181.0772,
+  "kind": "click",
+  "value": "닫기"
+ },
+ {
+  "t": 181.8781,
+  "kind": "caption",
+  "value": "창 닫기(Alt+F4) → 프로그램 종료"
+ },
+ {
+  "t": 182.7426,
+  "kind": "key",
+  "value": "alt+f4"
+ },
+ {
+  "t": 182.9932,
+  "kind": "seg_end",
+  "value": null,
+  "session": 1
+ },
+ {
+  "t": 184.1116,
+  "kind": "card",
+  "value": "프로그램 재실행",
+  "body": "다시 python run.py 실행 → 저장된 기록을 자동으로 불러옴"
+ },
+ {
+  "t": 184.1116,
+  "kind": "launch",
+  "value": "python run.py",
+  "session": 2
+ },
+ {
+  "t": 185.4948,
+  "kind": "window",
+  "value": "TETRIS · HUMAN × AI | Level 3",
+  "pid": 27600,
+  "session": 2
+ },
+ {
+  "t": 185.6502,
+  "kind": "buttons",
+  "value": "{'modes': {'solo': (np.int64(344), 54), 'two': (np.int64(409), 54), 'versus': (np.int64(482), 54), 'ai': (np.int64(559), 54), 'puzzle': (np.int64(647), 54)}, 'start': (np.int64(93), 101), 'pause': (np.int64(255), 101), 'stop': (np.int64(394), 101), 'hint': (np.int64(513), 101), 'records': (np.int64(615), 101), 'diff': {'easy': (np.int64(750), 101), 'normal': (np.int64(800), 101), 'hard': (np.int64(856), 101)}, 'coach': (np.int64(940), 101)}"
+ },
+ {
+  "t": 185.6502,
+  "kind": "seg_start",
+  "value": "relaunch",
+  "speed": 1.0,
+  "session": 2
+ },
+ {
+  "t": 185.6502,
+  "kind": "caption",
+  "value": "재실행 직후 메인 화면: 앞에서 저장된 경기·퍼즐 기록이 그대로 표시됨"
+ },
+ {
+  "t": 189.202,
+  "kind": "snap",
+  "value": "16_relaunch_records"
+ },
+ {
+  "t": 189.775,
+  "kind": "click",
+  "value": "records"
+ },
+ {
+  "t": 194.7772,
+  "kind": "click",
+  "value": "닫기"
+ },
+ {
+  "t": 196.3782,
+  "kind": "seg_end",
+  "value": null,
+  "session": 2
+ },
+ {
+  "t": 196.4419,
+  "kind": "key",
+  "value": "alt+f4"
+ }
+]

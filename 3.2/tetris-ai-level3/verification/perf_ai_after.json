@@ -1,0 +1,30 @@
+{
+  "project": "Tetris_AI_Level3_FINAL",
+  "python": "3.12.4",
+  "machine": "Intel64 Family 6 Model 158 Stepping 10, GenuineIntel",
+  "boards": 100,
+  "repeats": 3,
+  "difficulties": {
+    "easy": {
+      "n": 300,
+      "mean_ms": 2.23,
+      "median_ms": 1.9,
+      "p95_ms": 4.61,
+      "max_ms": 7.73
+    },
+    "normal": {
+      "n": 300,
+      "mean_ms": 2.14,
+      "median_ms": 1.9,
+      "p95_ms": 4.32,
+      "max_ms": 6.09
+    },
+    "hard": {
+      "n": 300,
+      "mean_ms": 49.51,
+      "median_ms": 40.79,
+      "p95_ms": 119.91,
+      "max_ms": 187.95
+    }
+  }
+}

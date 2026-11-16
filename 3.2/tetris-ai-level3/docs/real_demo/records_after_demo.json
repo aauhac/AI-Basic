@@ -1,0 +1,112 @@
+{
+  "matches": 1,
+  "aborted": 4,
+  "wins": {
+    "P1": 0,
+    "P2": 0,
+    "AI": 1
+  },
+  "losses": {
+    "P1": 1,
+    "P2": 0,
+    "AI": 0
+  },
+  "best_score": {
+    "P1": 2128,
+    "P2": 1618,
+    "AI": 3346
+  },
+  "lines": {
+    "P1": 23,
+    "P2": 10,
+    "AI": 13
+  },
+  "puzzles_solved": 1,
+  "puzzles_attempted": 1,
+  "history": [
+    {
+      "time": "2026-11-16 11:04:05",
+      "mode": "solo",
+      "winner": null,
+      "result": "aborted",
+      "mode_players": [
+        "P1"
+      ],
+      "scores": {
+        "P1": 1498
+      },
+      "lines": {
+        "P1": 5
+      }
+    },
+    {
+      "time": "2026-11-16 11:04:31",
+      "mode": "two",
+      "winner": null,
+      "result": "aborted",
+      "mode_players": [
+        "P1",
+        "P2"
+      ],
+      "scores": {
+        "P1": 2128,
+        "P2": 1618
+      },
+      "lines": {
+        "P1": 8,
+        "P2": 6
+      }
+    },
+    {
+      "time": "2026-11-16 11:04:51",
+      "mode": "versus",
+      "winner": null,
+      "result": "aborted",
+      "mode_players": [
+        "P1",
+        "P2"
+      ],
+      "scores": {
+        "P1": 1462,
+        "P2": 1200
+      },
+      "lines": {
+        "P1": 4,
+        "P2": 4
+      }
+    },
+    {
+      "time": "2026-11-16 11:05:18",
+      "mode": "ai",
+      "winner": "AI",
+      "result": "AI",
+      "mode_players": [
+        "P1",
+        "AI"
+      ],
+      "scores": {
+        "P1": 952,
+        "AI": 3346
+      },
+      "lines": {
+        "P1": 2,
+        "AI": 13
+      }
+    },
+    {
+      "time": "2026-11-16 11:05:51",
+      "mode": "solo",
+      "winner": null,
+      "result": "aborted",
+      "mode_players": [
+        "P1"
+      ],
+      "scores": {
+        "P1": 1058
+      },
+      "lines": {
+        "P1": 4
+      }
+    }
+  ]
+}

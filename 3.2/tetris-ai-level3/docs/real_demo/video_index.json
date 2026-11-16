@@ -1,0 +1,152 @@
+[
+ {
+  "type": "card",
+  "title": "자동화된 GUI 입력 시연",
+  "out_start": 0.0,
+  "out_end": 6.0
+ },
+ {
+  "type": "card",
+  "title": "장면 1 · 프로그램 실행",
+  "out_start": 6.0,
+  "out_end": 8.8
+ },
+ {
+  "type": "clip",
+  "name": "launch",
+  "session": 1,
+  "src_start": 1.6,
+  "src_end": 15.82,
+  "out_start": 8.8,
+  "out_end": 23.03,
+  "sped_up_out_sec": 0.0
+ },
+ {
+  "type": "card",
+  "title": "장면 2 · 1인용 테트리스",
+  "out_start": 23.03,
+  "out_end": 25.83
+ },
+ {
+  "type": "clip",
+  "name": "solo",
+  "session": 1,
+  "src_start": 15.82,
+  "src_end": 40.26,
+  "out_start": 25.83,
+  "out_end": 47.47,
+  "sped_up_out_sec": 2.8
+ },
+ {
+  "type": "card",
+  "title": "장면 3 · 2인 동시 플레이",
+  "out_start": 47.47,
+  "out_end": 50.27
+ },
+ {
+  "type": "clip",
+  "name": "two",
+  "session": 1,
+  "src_start": 40.26,
+  "src_end": 66.03,
+  "out_start": 50.27,
+  "out_end": 76.07,
+  "sped_up_out_sec": 0.0
+ },
+ {
+  "type": "card",
+  "title": "장면 4 · 2인 대전 · 공격",
+  "out_start": 76.07,
+  "out_end": 78.87
+ },
+ {
+  "type": "clip",
+  "name": "versus",
+  "session": 1,
+  "src_start": 66.03,
+  "src_end": 86.31,
+  "out_start": 78.87,
+  "out_end": 97.53,
+  "sped_up_out_sec": 1.6
+ },
+ {
+  "type": "card",
+  "title": "장면 5 · 인간 vs AI",
+  "out_start": 97.53,
+  "out_end": 100.33
+ },
+ {
+  "type": "clip",
+  "name": "ai",
+  "session": 1,
+  "src_start": 86.31,
+  "src_end": 117.27,
+  "out_start": 100.33,
+  "out_end": 131.3,
+  "sped_up_out_sec": 0.0
+ },
+ {
+  "type": "card",
+  "title": "장면 6 · AI 도우미",
+  "out_start": 131.3,
+  "out_end": 134.1
+ },
+ {
+  "type": "clip",
+  "name": "coach",
+  "session": 1,
+  "src_start": 117.27,
+  "src_end": 145.62,
+  "out_start": 134.1,
+  "out_end": 162.47,
+  "sped_up_out_sec": 0.0
+ },
+ {
+  "type": "card",
+  "title": "장면 7 · T-Spin 퍼즐 (어려움)",
+  "out_start": 162.47,
+  "out_end": 165.27
+ },
+ {
+  "type": "clip",
+  "name": "puzzle",
+  "session": 1,
+  "src_start": 145.62,
+  "src_end": 174.94,
+  "out_start": 165.27,
+  "out_end": 194.6,
+  "sped_up_out_sec": 0.0
+ },
+ {
+  "type": "card",
+  "title": "장면 8 · 기록 저장",
+  "out_start": 194.6,
+  "out_end": 197.4
+ },
+ {
+  "type": "clip",
+  "name": "records",
+  "session": 1,
+  "src_start": 174.94,
+  "src_end": 182.99,
+  "out_start": 197.4,
+  "out_end": 205.47,
+  "sped_up_out_sec": 0.0
+ },
+ {
+  "type": "card",
+  "title": "프로그램 재실행",
+  "out_start": 205.47,
+  "out_end": 208.27
+ },
+ {
+  "type": "clip",
+  "name": "relaunch",
+  "session": 2,
+  "src_start": 185.65,
+  "src_end": 196.38,
+  "out_start": 208.27,
+  "out_end": 219.0,
+  "sped_up_out_sec": 0.0
+ }
+]

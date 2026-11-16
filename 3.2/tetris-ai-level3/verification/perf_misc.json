@@ -1,0 +1,48 @@
+{
+  "python": "3.12.4",
+  "puzzle_generation": {
+    "easy": {
+      "n": 50,
+      "mean_ms": 31.64,
+      "p95_ms": 36.12,
+      "max_ms": 49.96,
+      "seeds": 50,
+      "validated": 50,
+      "max_attempts": 1
+    },
+    "normal": {
+      "n": 50,
+      "mean_ms": 63.6,
+      "p95_ms": 76.24,
+      "max_ms": 149.41,
+      "seeds": 50,
+      "validated": 50,
+      "max_attempts": 1
+    },
+    "hard": {
+      "n": 50,
+      "mean_ms": 105.84,
+      "p95_ms": 118.13,
+      "max_ms": 123.19,
+      "seeds": 50,
+      "validated": 50,
+      "max_attempts": 1
+    }
+  },
+  "records": {
+    "file_bytes": 15861,
+    "history_entries": 50,
+    "save": {
+      "n": 200,
+      "mean_ms": 2.12,
+      "p95_ms": 2.55,
+      "max_ms": 4.65
+    },
+    "load": {
+      "n": 200,
+      "mean_ms": 5.74,
+      "p95_ms": 7.02,
+      "max_ms": 11.8
+    }
+  }
+}
